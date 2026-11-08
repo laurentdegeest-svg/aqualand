@@ -795,3 +795,10 @@ summary::after{color:var(--brand)}
 @media(max-width:760px){.magnus{grid-template-columns:1fr}.magnus .btn{grid-column:1;grid-row:auto;justify-self:start}}
 .sys-img{aspect-ratio:auto;height:250px;padding:20px}
 .sys-img img{width:100%;height:100%;max-height:none;object-fit:contain}
+.sys-grid.five{grid-template-columns:repeat(5,1fr);gap:14px}
+.sys-grid.five .sys-body{padding:18px}
+.sys-grid.five .sys-body h3{font-size:21px}
+.sys-grid.five .chips span{font-size:11.5px}
+@media(max-width:1180px){.sys-grid.five{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.sys-grid.five{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.sys-grid.five{grid-template-columns:1fr}}
