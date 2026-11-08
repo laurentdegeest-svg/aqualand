@@ -43,6 +43,46 @@
   });
   $$("[data-price]").forEach(el => el.textContent = (C.prixAbonnements || {})[el.dataset.price] || "");
 
+  /* ---------- v2: prix, engagements, fondateur, avis ---------- */
+  const fmt = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, "\u202f") + " €";
+  const base = C.prixIndicatifInstallation || 1479, promo = base * (1 - (C.reduction || 0));
+  const cfgVals = { prixBarre: fmt(base), prixPromo: fmt(promo), delaiPoseCourt: C.delaiPoseCourt || "" };
+  $$("[data-cfg]").forEach(el => el.textContent = cfgVals[el.dataset.cfg] || "");
+  const pr = $("#promises");
+  if (pr) pr.innerHTML = (C.engagements || []).map(([ic, t, d]) => `<div class="promise reveal in"><span class="ico"><svg><use href="#${ic}"/></svg></span><b>${t}</b><p>${d}</p></div>`).join("");
+  const F = C.fondateur || {};
+  if ($("#founderTitle")) {
+    $("#founderTitle").textContent = F.prenom ? `Bonjour, moi c'est ${F.prenom}.` : "Une vraie personne, joignable.";
+    $("#founderText").textContent = F.texte || "";
+    if (F.photo) { $("#founderPhoto").style.backgroundImage = `url(${F.photo})`; } else { $("#founderInitial").textContent = (F.prenom || "A").charAt(0); }
+    if (F.telephone) $("#founderCall").href = "tel:" + F.telephone; else $("#founderCall").style.display = "none";
+    if (F.whatsapp) $("#founderWa").href = "https://wa.me/" + F.whatsapp; else $("#founderWa").style.display = "none";
+    if (!F.telephone && !F.whatsapp) { const a = $("#founderCall"); a.style.display = ""; a.href = "#"; a.textContent = "Faire mon diagnostic"; a.addEventListener("click", e => { e.preventDefault(); openDiag(); }); }
+  }
+  const AV = C.avis || [];
+  if (AV.length) {
+    $("#avis").style.display = "";
+    $("#reviews").innerHTML = AV.map(a => `<div class="review"><div class="stars">${"★".repeat(a.note || 5)}</div><p>${a.texte}</p><b>${a.nom}</b> <small style="color:var(--ink-3)">${a.ville || ""}</small></div>`).join("");
+  }
+
+  /* ---------- v2: test calcaire dans le hero ---------- */
+  const hcp = $("#heroCp"), hres = $("#heroResult");
+  function heroTest() {
+    hcp.value = hcp.value.replace(/\D/g, "").slice(0, 4);
+    if (hcp.value.length !== 4) { hres.innerHTML = '<span style="color:var(--bad)">Entrez un code postal belge à 4 chiffres.</span>'; return; }
+    const h = hardness(hcp.value);
+    if (!h) { hres.innerHTML = '<span style="color:var(--bad)">Code postal non reconnu.</span>'; return; }
+    const m = h.mid, pos = m < 15 ? m / 15 * 25 : m < 25 ? 25 + (m - 15) / 10 * 25 : m < 35 ? 50 + (m - 25) / 10 * 25 : 75 + Math.min(m - 35, 10) / 10 * 25;
+    const verdict = h.mid >= 25 ? "Un adoucisseur protégera vraiment votre installation." : h.mid >= 15 ? "Un adoucisseur apporte surtout du confort." : "Un adoucisseur n'est probablement pas nécessaire : nous vous le confirmerons.";
+    hres.innerHTML = `En ${h.region}, l'eau est estimée <b style="color:${h.lvl[1]}">${h.lvl[0]}</b> (≈ ${h.min}–${h.max} °f).<div class="meter"><i style="left:${Math.min(97, Math.max(3, pos))}%"></i></div>${verdict}<button class="btn btn-primary" type="button" id="heroContinue">Continuer et obtenir −15 % →</button>`;
+    $("#heroContinue").addEventListener("click", () => { const cp = $("#cp"); cp.value = hcp.value; cp.dispatchEvent(new Event("input")); openDiag(); show(2); });
+  }
+  if (hcp) {
+    $("#heroGo").addEventListener("click", heroTest);
+    hcp.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); heroTest(); } });
+    hcp.addEventListener("input", () => { hcp.value = hcp.value.replace(/\D/g, "").slice(0, 4); if (hcp.value.length === 4) heroTest(); });
+  }
+
   /* ---------- Technology animation ---------- */
   const resin = $("#resin"), tank = $("#saltTank"), cap = $("#techCaption");
   const beads = [];
