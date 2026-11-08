@@ -619,3 +619,34 @@ summary::after{color:var(--brand)}
 .form-msg{color:var(--bad);margin-top:10px}
 .form-ok{text-align:center;padding:60px 20px;background:var(--soft);border-radius:var(--radius)}
 .form-ok h3{font-size:26px;font-weight:300;margin-bottom:8px}
+
+/* v9 — diagnostic aux couleurs de la charte */
+.diag-box{border-radius:20px;font-family:'Lato',sans-serif}
+.diag-top b{font:400 16px 'Lato',sans-serif;letter-spacing:.02em}
+.diag-top .promo{background:var(--night)!important;color:#fff!important;font-weight:700;margin-left:10px}
+.x{background:var(--soft);font-weight:300}
+.progress{height:3px;background:var(--line)}
+.progress i{background:var(--night)}
+.q-step h3{font:300 clamp(26px,3vw,32px)/1.2 'Lato',sans-serif;letter-spacing:-.005em;margin-bottom:8px}
+.q-step .hint{font-weight:300;font-size:16px}
+.field input,.field select,.field textarea{font:400 17px 'Lato',sans-serif;border:1px solid var(--line);border-radius:12px}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--night);box-shadow:0 0 0 3px rgba(15,19,51,.08)}
+.field input::placeholder{color:var(--ink-3);font-weight:300}
+.cp-input{font:300 22px 'Lato',sans-serif!important;letter-spacing:.04em!important;text-align:left!important;padding:0 18px!important;min-height:58px}
+.choice span{font:400 16px 'Lato',sans-serif;border:1px solid var(--line);border-radius:12px}
+.choice input:checked+span{border-color:var(--night);background:rgba(15,19,51,.04);box-shadow:0 0 0 2px var(--night)}
+.gauge{background:var(--soft);border-radius:14px}
+.gauge-dot{border-color:var(--night)}
+.gauge-txt{font-weight:300}
+.photo-slot{border:1px dashed #c9ccd9;border-radius:14px;font-weight:400;font-family:'Lato',sans-serif}
+.photo-slot svg{color:var(--night)}
+.photo-slot.has{border:1px solid var(--night)}
+.check input{accent-color:var(--night)}
+.diag-foot .btn{font:400 17px 'Lato',sans-serif}
+.diag-foot .btn-primary{background:var(--night)}
+.result-hero .big{background:var(--night)}
+.reco{background:var(--soft);border:1px solid var(--line);border-radius:14px}
+.reco h4{font:300 22px 'Lato',sans-serif}
+.reco li::before{color:var(--brand)}
+.kpis b{font-weight:300}
+.choice span em{display:none}
