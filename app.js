@@ -309,26 +309,32 @@
     fd.append("durete_estimee", h ? `${h.min}-${h.max} °f (${h.region})` : "—");
     fd.append("_subject", `Diagnostic Aqualand −15 % — ${cpInput.value} — ${$("#nom").value}`);
     fd.append("_template", "table"); fd.append("_captcha", "false");
+    let saved = null;
     try {
+      if (window.AQUA_SAVE_DIAG) { try { saved = await window.AQUA_SAVE_DIAG(fd); } catch (e2) { console.warn("[Aqualand] Enregistrement espace client impossible", e2); } }
       if (C.emailReception) {
         await fetch("https://formsubmit.co/" + encodeURIComponent(C.emailReception), { method: "POST", body: fd, mode: "no-cors" });
       } else {
         console.info("[Aqualand] Mode test : aucun e-mail configuré dans config.js", Object.fromEntries(fd.entries()));
         await new Promise(r => setTimeout(r, 700));
       }
-      renderResult(h);
+      renderResult(h, saved);
       show(TOTAL + 1);
     } catch (e) {
       err(6, "L'envoi a échoué. Vérifiez votre connexion et réessayez.");
     } finally { next.disabled = false; next.innerHTML = original; if (cur > TOTAL) next.textContent = "Fermer"; }
   }
 
-  function renderResult(h) {
+  function renderResult(h, saved) {
     const p = persNum(), mid = h ? h.mid : 30;
     const duo = p >= 5 || mid >= 38;
     const kg = saltKg(p, mid);
     const tva = val("plus_10_ans") === "Oui";
-    $("#resIntro").textContent = `Merci ${$("#nom").value.split(" ")[0]} ! Vous recevrez votre offre personnalisée avec −${Math.round(C.reduction * 100)} % par e-mail très prochainement.`;
+    const prenom = $("#nom").value.split(" ")[0];
+    const portal = saved && saved.id;
+    $("#resIntro").innerHTML = `Merci ${prenom} ! Votre diagnostic est bien reçu. <b>Un expert Aqualand va réaliser votre devis personnalisé</b> avec −${Math.round(C.reduction * 100)} %.` +
+      (portal ? (saved.logged ? ` Vous le retrouverez dans votre espace client dès qu'il sera prêt.` : ` Vous allez recevoir un e-mail avec un lien pour accéder à votre <b>espace client</b> : vous y suivrez votre demande et y consulterez votre devis.`) : ` Vous le recevrez par e-mail très prochainement.`) +
+      (portal ? `<br><a class="btn btn-light" style="margin-top:14px" href="espace-client.html">Mon espace client</a>` : "");
     $("#reco").innerHTML = `
       <small style="color:var(--ink-3);font-weight:700;text-transform:uppercase;letter-spacing:.06em">Première recommandation</small>
       <h4>${duo ? "Aqualand Duo — eau douce en continu" : "Aqualand Compact — le plus économique"}</h4>

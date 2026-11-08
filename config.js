@@ -8,6 +8,9 @@ window.AQUALAND = {
   // Laissez vide "" pour désactiver l'envoi (mode test).
   emailReception: "laurent.degeest@gmail.com",
 
+  // Espace client (Supabase) : Project URL et clé "anon public" (Settings > API)
+  supabase: { url: "", anonKey: "" },
+
   // Coordonnées affichées en bas de page
   contact: {
     email: "info@aqualand.be",
