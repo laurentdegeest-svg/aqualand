@@ -448,3 +448,99 @@ body.lock{overflow:hidden;position:fixed;width:100%}
 .price-card h3,.model h3{letter-spacing:-.03em}
 summary{font-weight:600;font-size:18px}
 .split>div>.lead{margin-bottom:8px}
+
+/* =====================================================================
+   v5 — style « Stratus » : photo plein écran, titres fins centrés, sobriété
+   ===================================================================== */
+:root{
+  --ink:#15182e; --ink-2:#4a4f66; --ink-3:#8a8fa6; --line:#e6e7ee; --soft:#f5f6fa;
+  --night:#0f1333; --night-2:#171c44; --night-line:rgba(255,255,255,.12);
+  --brand:#2c3e9e; --display:'Lato','Helvetica Neue',Arial,sans-serif; --radius:14px;
+}
+body{font-family:'Lato','Helvetica Neue',Arial,sans-serif;font-size:17px;color:var(--ink)}
+h1,h2,h3,h4{font-family:var(--display);font-weight:300;letter-spacing:-.005em;line-height:1.15}
+h1{font-size:clamp(40px,5.2vw,72px);letter-spacing:-.01em}
+.hero h1,.page-hero h1{font-size:clamp(40px,5.2vw,72px)}
+h2{font-size:clamp(32px,3.8vw,50px);letter-spacing:-.005em}
+h3,h4{font-weight:700;letter-spacing:0;font-size:19px;line-height:1.3}
+.cell h3{font-size:19px}
+.grad-text,.dark .grad-text,.hero .grad-text,.page-hero .grad-text,.cta .grad-text,.panel .grad-text,.cell.dark .grad-text{color:inherit}
+.cell .big.grad-text{color:inherit;font-weight:300}
+.lead{font-size:clamp(17px,1.5vw,20px);font-weight:300;line-height:1.7}
+.eyebrow{color:var(--ink-3);font:700 12px/1 'Lato',sans-serif;letter-spacing:.28em}
+.eyebrow i{display:none}
+.dark .eyebrow,.page-hero .eyebrow,.hero .eyebrow,.cta .eyebrow{color:rgba(255,255,255,.6)}
+
+/* boutons */
+.btn{font:400 17px/1 'Lato',sans-serif;min-height:56px;padding:0 34px;letter-spacing:.01em}
+.btn-glow{background:var(--night);color:#fff;box-shadow:none}
+.btn-glow:hover{box-shadow:0 14px 30px rgba(15,19,51,.25)}
+.hero .btn-glow,.page-hero .btn-glow,.dark .btn-glow,.cta .btn-glow,.panel .btn-glow,.checker .btn-glow,.price-card.feat .btn-glow,.mobile-menu .btn-glow,.sticky-cta .btn-glow{background:#fff;color:var(--night)}
+.btn-outline{border:1.5px solid rgba(255,255,255,.85);color:#fff}
+.btn-outline:hover{background:rgba(255,255,255,.1)}
+.btn-primary{background:var(--night)}
+.header.on-dark:not(.scrolled) .btn-primary{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.85)}
+.sticky-cta .btn-glow{box-shadow:0 12px 30px rgba(15,19,51,.35);background:var(--night);color:#fff}
+
+/* en-tête */
+.logo{font:300 24px/1 'Lato',sans-serif;letter-spacing:.22em;text-transform:uppercase}
+.logo svg{display:none}
+.menu{gap:10px}
+.menu a{font-weight:400;font-size:16px;opacity:.92;padding:10px 12px;border-radius:0;background:none!important;position:relative}
+.menu a.active::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;background:currentColor}
+.header .btn{min-height:44px;padding:0 22px;font-size:15px}
+.header.scrolled{background:rgba(255,255,255,.94)}
+.mobile-menu a{font:300 30px/1.3 'Lato',sans-serif}
+
+/* hero photo plein écran centré */
+.hero-photo{background:linear-gradient(180deg,rgba(12,15,45,.25),rgba(12,15,45,.55) 70%,rgba(12,15,45,.85)),var(--bg) center/cover no-repeat;min-height:100svh;padding:calc(150px + env(safe-area-inset-top)) 0 0;text-align:center;display:block}
+.hero-center{display:flex;flex-direction:column;align-items:center}
+.hero-center .lead{margin:0 auto 34px;color:rgba(255,255,255,.85)}
+.hero-center .hero-ctas{justify-content:center}
+.promo-pill{border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.08);color:#fff}
+.promo-pill b{background:#fff;color:var(--night)}
+.hero-product{width:min(440px,86vw);margin:46px auto 0}
+.hero-product .product-stage{aspect-ratio:1/1}
+.chevron{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);color:#fff;opacity:.8;animation:bob 2.2s ease-in-out infinite}
+.chevron svg{width:34px;height:34px}
+@keyframes bob{50%{transform:translate(-50%,8px)}}
+.tag3d{background:rgba(15,19,51,.55);border-color:rgba(255,255,255,.2)}
+.tag3d::before{background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.2)}
+.product-stage .halo{background:radial-gradient(circle,rgba(160,190,255,.35),transparent 65%)}
+@media(max-width:640px){.tag3d{display:none}.hero-photo{padding-top:calc(120px + env(safe-area-inset-top))}}
+
+/* en-têtes de pages */
+.page-hero{background:linear-gradient(180deg,rgba(12,15,45,.35),rgba(12,15,45,.7)),var(--bg,var(--night)) center/cover no-repeat;text-align:center;padding:calc(170px + env(safe-area-inset-top)) 0 130px}
+.page-hero .lead{margin-inline:auto;color:rgba(255,255,255,.85)}
+.page-hero .hero-ctas{justify-content:center}
+.page-hero .crumbs{color:rgba(255,255,255,.65)}
+.page-hero .checker{max-width:620px;margin:36px auto 0;text-align:left;background:rgba(15,19,51,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+
+/* sections & composants plus sobres */
+section{padding:130px 0}
+.dark{background:var(--night)}
+.cell,.price-card,.model,.promise,.review,.score-row,.stat,.table-wrap,.stats,.specs,.checker,.panel,.tech-anim,.stepc{border-radius:var(--radius)}
+.cell:hover{transform:none;box-shadow:var(--shadow)}
+.stat b,.amount,.spec b,.score-val,.mini-stats b,.eco-save strong{font-weight:300;letter-spacing:-.01em}
+.stat b small{font-weight:400}
+.score-row.us{background:#fff;border:2px solid var(--night);box-shadow:var(--shadow)}
+.score-row.us .score-bar i,.bar-row.us .bar-fill{background:var(--brand)}
+.price-card.feat{background:var(--night);box-shadow:0 30px 70px rgba(15,19,51,.25)}
+.price-card .badge{background:#fff;color:var(--night);border:1px solid var(--line)}
+.price-card li::before{color:var(--brand)}.price-card.feat li::before{color:#fff}
+.ticks li::before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M6.5 12.5l3.5 3.5 7.5-8'/%3E%3C/svg%3E") center/14px no-repeat,var(--brand)}
+.dark .ticks li::before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%230f1333' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M6.5 12.5l3.5 3.5 7.5-8'/%3E%3C/svg%3E") center/14px no-repeat,#fff}
+.chip svg{color:#fff}
+.stepc::before{color:rgba(255,255,255,.55)}
+.ico{color:var(--brand)}
+.cell.dark .ic{background:rgba(255,255,255,.1);color:#fff}
+.range output,.bar-row.us .bar-top{color:#c7d2ff}
+.hero-result .btn{background:#fff;color:var(--night)}
+.marquee{background:var(--night)}
+.marquee span::before{background:rgba(255,255,255,.5)}
+summary::after{color:var(--brand)}
+.steps-tech button.active{background:#fff;color:var(--night)}
+/* CTA en photo */
+.cta{background:linear-gradient(rgba(12,15,45,.55),rgba(12,15,45,.75)),var(--bg,var(--night)) center/cover}
+.cta::before,.cta::after{display:none}
+.founder-photo{background:var(--night) center/cover;color:#fff;font-weight:300}
