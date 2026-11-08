@@ -190,3 +190,27 @@
   function tab(k) { tabs.forEach(b => b.classList.toggle("active", b.dataset.tab === k)); document.querySelectorAll("[data-pane]").forEach(p => p.hidden = p.dataset.pane !== k); }
   if (tabs.length) { tabs.forEach(b => b.addEventListener("click", () => { tab(b.dataset.tab); history.replaceState(null, "", "#" + b.dataset.tab); })); tab(location.hash === "#devis" ? "devis" : "rdv"); addEventListener("hashchange", () => tab(location.hash === "#devis" ? "devis" : "rdv")); }
 })();
+
+/* ===== v17 : carte animée de la Belgique ===== */
+(function () {
+  const box = document.querySelector("[data-bemap]"); if (!box) return;
+  const P = (lon, lat) => [((lon - 2.45) * 0.636 * 210).toFixed(1), ((51.58 - lat) * 210).toFixed(1)];
+  const border = [[2.55,51.09],[2.9,51.24],[3.35,51.37],[3.8,51.21],[4.24,51.37],[4.47,51.48],[4.93,51.44],[5.24,51.31],[5.8,51.16],[5.65,50.88],[5.7,50.75],[6.02,50.75],[6.1,50.67],[6.27,50.5],[6.4,50.33],[6.13,50.13],[5.97,50.17],[5.75,49.79],[5.9,49.66],[5.82,49.55],[5.47,49.5],[5.1,49.77],[4.87,49.79],[4.85,49.95],[4.84,50.15],[4.68,49.99],[4.23,49.96],[4.15,50.27],[3.7,50.3],[3.6,50.45],[3.3,50.5],[3.15,50.7],[2.85,50.72],[2.63,50.82]];
+  const cities = [["Bruxelles",4.35,50.85,1],["Anvers",4.40,51.22],["Gand",3.72,51.05],["Bruges",3.22,51.21],["Ostende",2.92,51.21],["Courtrai",3.26,50.83],["Louvain",4.70,50.88],["Hasselt",5.34,50.93],["Liège",5.57,50.63],["Namur",4.87,50.47],["Charleroi",4.44,50.41],["Mons",3.95,50.45],["Tournai",3.39,50.61],["Wavre",4.61,50.72],["Arlon",5.81,49.69],["Bastogne",5.72,50.0],["Eupen",6.03,50.63]];
+  const hub = P(4.35, 50.85);
+  const path = "M" + border.map(p => P(...p).join(",")).join("L") + "Z";
+  let svg = `<svg viewBox="0 0 540 460" role="img" aria-label="Carte du réseau Aqualand en Belgique">
+    <defs><radialGradient id="bmg" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="rgba(140,170,255,.22)"/><stop offset="1" stop-color="rgba(140,170,255,.04)"/></radialGradient></defs>
+    <path class="bm-land" d="${path}" fill="url(#bmg)" stroke="rgba(255,255,255,.55)" stroke-width="1.6" stroke-linejoin="round" pathLength="1"/>`;
+  cities.forEach(([n, lon, lat, main], i) => {
+    const [x, y] = P(lon, lat);
+    if (!main) svg += `<line class="bm-link" style="--d:${0.8 + i * 0.08}s" x1="${hub[0]}" y1="${hub[1]}" x2="${x}" y2="${y}" stroke="rgba(255,255,255,.18)" stroke-width="1" pathLength="1"/>`;
+  });
+  cities.forEach(([n, lon, lat, main], i) => {
+    const [x, y] = P(lon, lat), d = (0.9 + i * 0.08).toFixed(2);
+    svg += `<g class="bm-city" style="--d:${d}s"><circle class="bm-pulse" cx="${x}" cy="${y}" r="${main ? 9 : 6}" fill="rgba(255,255,255,.25)"/><circle cx="${x}" cy="${y}" r="${main ? 5.5 : 3.6}" fill="#fff"/><text x="${n === "Ostende" ? +x - 9 : n === "Louvain" ? +x - 4 : +x + 9}" y="${n === "Louvain" ? +y - 10 : +y + 4}" text-anchor="${n === "Ostende" ? "end" : "start"}" font-size="${main ? 14 : 11.5}" fill="rgba(255,255,255,${main ? 1 : .75})" font-family="Lato,Inter,sans-serif" font-weight="${main ? 700 : 400}">${n}</text></g>`;
+  });
+  box.innerHTML = svg + "</svg>";
+  const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { io.disconnect(); box.classList.add("go"); } }, { threshold: .3 });
+  io.observe(box);
+})();

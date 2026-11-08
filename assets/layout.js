@@ -15,8 +15,8 @@
   </div></header>
   <nav class="mobile-menu" id="mobileMenu"><a href="index.html">Accueil</a>${L.map(([h,t]) => `<a href="${h}">${t}</a>`).join("")}<button class="btn btn-glow btn-block" data-open-devis>Demander un devis</button></nav>`;
   const footer = `<footer><div class="container"><div class="foot">
-    <div><a href="index.html" class="logo">${logo}Aqualand</a><p>Adoucisseurs belges sans électricité, posés à prix fixe. Sel livré par abonnement, sans engagement.</p></div>
-    <div><h4>Découvrir</h4><ul><li><a href="solution.html">La solution</a></li><li><a href="comparer.html">Comparer</a></li><li><a href="systemes.html">Nos systèmes</a></li><li><a href="systemes.html#pro">Professionnels</a></li></ul></div>
+    <div><a href="index.html" class="logo">${logo}Aqualand</a><p>Adoucisseurs belges sans électricité, installés partout en Belgique par notre réseau de partenaires. Sel livré par abonnement, sans engagement.</p></div>
+    <div><h4>Découvrir</h4><ul><li><a href="solution.html">La solution</a></li><li><a href="comparer.html">Comparer</a></li><li><a href="systemes.html">Nos systèmes</a></li><li><a href="systemes.html#pro">Professionnels</a></li><li><a href="partenaires.html">Devenir partenaire</a></li></ul></div>
     <div><h4>Comprendre</h4><ul><li><a href="guide.html">Guide de l'eau</a></li><li><a href="guide.html#faq">FAQ</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Devis &amp; rendez-vous</a></li></ul></div>
     <div><h4>Contact</h4><ul><li data-contact="email"></li><li data-contact="phone"></li><li data-contact="zone"></li></ul></div>
   </div><div class="legal"><span data-contact="legal"></span> · Photos : Unsplash</div></div></footer>

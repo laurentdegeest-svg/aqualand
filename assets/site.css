@@ -810,3 +810,27 @@ summary::after{color:var(--brand)}
 @media(max-width:520px){.choices.one-row{grid-template-columns:1fr}}
 .center.small{text-align:center;margin-top:12px}
 .contact-alt{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:28px;color:var(--ink-2)}
+
+/* v17 — couverture nationale & partenaires */
+.cover-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+.provs{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.provs span{font-size:13.5px;padding:7px 12px;border-radius:999px;border:1px solid var(--night-line);background:rgba(255,255,255,.05);color:rgba(255,255,255,.85)}
+.cover-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+.cover-kpis div{border-top:1px solid var(--night-line);padding-top:14px}
+.cover-kpis b{display:block;font:300 34px 'Lato',sans-serif;color:#fff}
+.cover-kpis span{font-size:13px;color:rgba(255,255,255,.6)}
+.bemap svg{width:100%;height:auto;overflow:visible}
+.bm-land{stroke-dasharray:1;stroke-dashoffset:1}
+.go .bm-land{transition:stroke-dashoffset 2.2s cubic-bezier(.4,0,.2,1);stroke-dashoffset:0}
+.bm-link{stroke-dasharray:1;stroke-dashoffset:1}
+.go .bm-link{transition:stroke-dashoffset 1s ease var(--d);stroke-dashoffset:0}
+.bm-city{opacity:0;transform-box:fill-box;transition:opacity .5s ease var(--d)}
+.go .bm-city{opacity:1}
+.bm-pulse{transform-box:fill-box;transform-origin:center;animation:bmp 2.6s ease-out infinite;animation-delay:var(--d)}
+@keyframes bmp{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.6);opacity:0}}
+@media(max-width:960px){.cover-grid{grid-template-columns:1fr}.bemap{order:-1;max-width:560px}}
+@media(max-width:520px){.cover-kpis{grid-template-columns:1fr 1fr 1fr}.cover-kpis b{font-size:26px}}
+.partner-band{padding:70px 0}
+.pb-grid{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 34px}
+.pb-grid h3{font:300 28px 'Lato',sans-serif;margin-bottom:6px}
+.pb-grid p{color:var(--ink-2);max-width:620px}
