@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=11">
+<link rel="stylesheet" href="assets/site.css?v=12">
 </head>
 <body data-page="" data-dark="1">
 <main>
@@ -25,8 +25,8 @@
     <h1 class="reveal d1">L'eau douce, sans y penser.</h1>
     <p class="lead reveal d2">Un adoucisseur belge qui fonctionne sans électricité, installé chez vous à prix fixe. Avec l'abonnement sel, les sacs arrivent chez vous au bon moment.</p>
     <div class="hero-ctas reveal d3">
-      <button class="btn btn-glow" data-open-diag>Faire mon diagnostic</button>
-      <a class="btn btn-outline" href="solution.html">Découvrir la solution</a>
+      <button class="btn btn-glow" data-open-devis>Demander un devis</button>
+      <a class="btn btn-outline" href="systemes.html">Voir nos systèmes</a>
     </div>
     <div class="hero-product"><div class="product-stage reveal">
   <div class="halo"></div><div class="floor"></div>
@@ -52,7 +52,7 @@
       <div class="stat reveal"><b><span data-count="0">0</span><small>kWh</small></b><span>d'électricité consommée</span></div>
       <div class="stat reveal d1"><b>± <span data-count="2">0</span><small>h</small></b><span>pour une pose standard</span></div>
       <div class="stat reveal d2"><b><span data-count="300">0</span><small>g</small></b><span>de sel par régénération</span></div>
-      <div class="stat reveal d3"><b><span data-count="promo">0</span><small>€</small></b><span>tout compris, pose incluse</span></div>
+      <div class="stat reveal d3"><b>15–20<small>ans</small></b><span>de durée de vie</span></div>
     </div>
   </div>
 </section>
@@ -136,7 +136,7 @@
     <div class="center reveal"><span class="eyebrow">Pour commencer</span><h2>Trois façons de démarrer.</h2><p class="lead">Faites le diagnostic vous-même et profitez de −15 %, demandez simplement un devis, ou laissez-nous venir chez vous.</p></div>
     <div class="starts">
   <div class="start reveal"><span class="start-tag">−15 %</span><div class="ico"><svg><use href="#i-camera"/></svg></div><h3>Diagnostic en ligne</h3><p>2 minutes depuis votre téléphone : code postal, quelques questions, 2 photos. Vous recevez votre offre écrite avec −15 %.</p><button class="btn btn-glow btn-block" data-open-diag>Faire mon diagnostic</button></div>
-  <div class="start reveal d1"><div class="ico"><svg><use href="#i-euro"/></svg></div><h3>Demander un devis</h3><p>Vous préférez nous écrire ? Quelques informations suffisent, nous vous envoyons un devis par e-mail.</p><a class="btn btn-light btn-block" href="contact.html#devis">Demander un devis</a></div>
+  <div class="start reveal d1"><div class="ico"><svg><use href="#i-euro"/></svg></div><h3>Demander un devis</h3><p>Vous préférez nous écrire ? Quelques informations suffisent, nous vous envoyons un devis par e-mail.</p><button class="btn btn-light btn-block" data-open-devis>Demander un devis</button></div>
   <div class="start reveal d2"><div class="ico"><svg><use href="#i-clock"/></svg></div><h3>Prendre rendez-vous</h3><p>Pas le temps de faire le diagnostic ? Nous venons chez vous, mesurons votre eau et vous conseillons sur place.</p><a class="btn btn-light btn-block" href="contact.html#rdv">Prendre rendez-vous</a></div>
 </div>
   </div>
@@ -149,35 +149,22 @@
       <span class="eyebrow reveal">L'abonnement sel</span>
       <h2 class="reveal">Vous ne portez plus jamais un sac de sel.</h2>
       <p class="lead reveal">Nous calculons votre consommation selon la dureté de votre eau et la taille de votre ménage. Le sel adapté à votre appareil arrive chez vous juste avant d'en manquer.</p>
-      <ul class="ticks reveal"><li>Livraison automatique à domicile</li><li>Fréquence calculée pour votre eau</li><li>Avancer ou reporter un envoi en un clic</li><li>Sans engagement : <span data-price="sel"></span> par mois</li></ul>
+      <ul class="ticks reveal"><li>Livraison automatique à domicile</li><li>Fréquence calculée pour votre eau</li><li>Avancer ou reporter un envoi en un clic</li><li>Sans engagement, résiliable en un clic</li></ul>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="center reveal"><span class="eyebrow"><i></i>Tarifs</span><h2>Une installation, puis le sel livré si vous le souhaitez.</h2><p class="lead">Un prix fixe pour l'installation. L'abonnement sel est facultatif et sans engagement.</p></div>
-    <div class="pricing">
-  <div class="price-card reveal">
-    <img class="plan-img" loading="lazy" src="https://hydroathome.be/wp-content/uploads/2026/07/DHSO-100M-03-e1787931484768.webp" alt=""><h3>Installation seule</h3><p class="muted">Vous gérez le sel vous-même.</p>
-    <div class="amount"><s data-cfg="prixBarre"></s><span data-cfg="prixPromo"></span></div><small class="muted">une fois, TVAC 6 %, pose comprise</small>
-    <ul><li>Adoucisseur Compact</li><li>Pose par notre technicien</li><li>Réglage sur votre eau</li><li>Premier sel inclus</li></ul>
-    <button class="btn btn-light btn-block" data-open-diag>Obtenir mon offre −15 %</button>
-  </div>
-  <div class="price-card feat reveal d1">
-    <span class="badge">Le plus choisi</span>
-    <img class="plan-img" loading="lazy" src="https://hydroathome.be/wp-content/uploads/2026/07/DHSO-100M-04-e1787931465230.webp" alt=""><h3>Installation + abonnement sel</h3><p class="muted">Vous ne portez plus jamais un sac.</p>
-    <div class="amount"><span data-price="sel"></span> <small>/ mois</small></div><small class="muted">+ l'installation à <span data-cfg="prixPromo"></span></small>
-    <ul><li>Tout le contenu de l'installation</li><li>Sel livré chez vous automatiquement</li><li>Fréquence calculée pour votre eau</li><li>Sans engagement, résiliable en un clic</li></ul>
-    <button class="btn btn-glow btn-block" data-open-diag>Obtenir mon offre −15 %</button>
-  </div>
-  <div class="price-card reveal d2">
-    <img class="plan-img" loading="lazy" src="https://hydroathome.be/wp-content/uploads/2026/07/DHSO-100M-01-e1787931535929.webp" alt=""><h3>Installation + Sérénité</h3><p class="muted">Sel et entretien, tout est géré.</p>
-    <div class="amount"><span data-price="serenite"></span> <small>/ mois</small></div><small class="muted">+ l'installation à <span data-cfg="prixPromo"></span></small>
-    <ul><li>Abonnement sel inclus</li><li>Entretien annuel à domicile</li><li>Analyse de l'eau</li><li>Pièces d'usure et assistance prioritaire</li></ul>
-    <button class="btn btn-light btn-block" data-open-diag>Obtenir mon offre −15 %</button>
-  </div>
-</div>
+    <div class="center reveal"><span class="eyebrow">Nos systèmes</span><h2>Un système pour chaque maison.</h2><p class="lead">Compact, à bac séparé ou double colonne : nous choisissons avec vous l'appareil adapté à votre eau, votre ménage et votre espace.</p></div>
+    <div class="sys-grid"><article class="sys reveal" id="compact"><span class="sys-tag">Le plus choisi</span><div class="sys-img"><img loading="lazy" src="https://hydroathome.be/wp-content/uploads/2026/07/DHSO-100M-03-e1787931484768.webp" alt="Aqualand Compact"></div>
+  <div class="sys-body"><small>Hydrosoft 100M</small><h3>Aqualand Compact</h3><p class="sys-who">Maisons et appartements, 1 à 4 personnes</p><ul class="ticks"><li>Le plus compact : 48 × 54 × 24 cm, bac à sel intégré</li><li>Se glisse dans un placard, sous un évier ou dans une buanderie</li><li>Le meilleur rapport qualité-prix pour un ménage classique</li></ul>
+  <button class="btn btn-light btn-block" data-open-devis>Demander un devis</button></div></article><article class="sys reveal d1" id="bacsep"><div class="sys-img"><img loading="lazy" src="https://hydroathome.be/wp-content/uploads/2026/07/DHSO-100-BLS-03-e1787931292222.webp" alt="Aqualand Compact S"></div>
+  <div class="sys-body"><small>Hydrosoft 100BLS / 100BL</small><h3>Aqualand Compact S</h3><p class="sys-who">Petits espaces : armoire de compteur, cave, puits</p><ul class="ticks"><li>Bac à sel séparé, placé jusqu'à 3 m de l'appareil</li><li>Petit bac pour les espaces restreints, ou grand bac de 30 kg pour moins de remplissages</li><li>Idéal quand la place manque près du compteur</li></ul>
+  <button class="btn btn-light btn-block" data-open-devis>Demander un devis</button></div></article><article class="sys reveal d2" id="duo"><div class="sys-img"><img loading="lazy" src="https://hydroathome.be/wp-content/uploads/2023/02/DHSO-200-BL-01-e1787932389665.webp" alt="Aqualand Duo"></div>
+  <div class="sys-body"><small>Hydrosoft 200BL</small><h3>Aqualand Duo</h3><p class="sys-who">Grandes familles, eau très dure, professionnels</p><ul class="ticks"><li>Deux colonnes qui alternent : eau douce 24 h/24</li><li>Aucune coupure pendant la régénération</li><li>Adapté aux gros débits : 5 personnes et plus, Airbnb, commerces</li></ul>
+  <button class="btn btn-light btn-block" data-open-devis>Demander un devis</button></div></article></div>
+    <div class="center" style="margin-top:36px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn btn-light" href="systemes.html">Voir tous nos systèmes</a><button class="btn btn-glow" data-open-devis>Demander un devis</button></div>
   </div>
 </section>
 
@@ -191,18 +178,18 @@
 
 <section id="avis" style="display:none"><div class="container"><div class="center reveal"><span class="eyebrow"><i></i>Avis clients</span><h2>Ils ont dit <span class="grad-text">adieu au calcaire.</span></h2></div><div class="reviews" id="reviews"></div></div></section>
 <section><div class="container"><div class="cta reveal" style="--bg:url('https://images.unsplash.com/photo-1599036629621-07f8cb665695?auto=format&fit=crop&w=1800&q=80')">
-  <span class="eyebrow"><i></i>Diagnostic gratuit</span>
-  <h2>Votre eau douce,<br><span class="grad-text">en 2 minutes.</span></h2>
-  <p>Code postal, quelques questions, 2 photos. Vous recevez une offre écrite à prix fixe, avec −15 % sur votre installation.</p>
-  <button class="btn btn-glow" data-open-diag>Commencer mon diagnostic</button>
+  <span class="eyebrow">Devis gratuit</span>
+  <h2>Recevez votre devis personnalisé.</h2>
+  <p>Faites le diagnostic vous-même en 2 minutes et profitez de −15 %, ou laissez un expert venir chez vous. Dans les deux cas, c'est gratuit et sans engagement.</p>
+  <button class="btn btn-glow" data-open-devis>Demander un devis</button>
 </div></div></section>
 
 </main>
-<script src="config.js?v=11"></script>
+<script src="config.js?v=12"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
-<script src="assets/layout.js?v=11"></script>
-<script src="app.js?v=11"></script>
-<script src="assets/pages.js?v=11"></script>
-<script src="assets/portal.js?v=11"></script>
+<script src="assets/layout.js?v=12"></script>
+<script src="app.js?v=12"></script>
+<script src="assets/pages.js?v=12"></script>
+<script src="assets/portal.js?v=12"></script>
 </body>
 </html>
