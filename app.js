@@ -52,8 +52,8 @@
   if (pr) pr.innerHTML = (C.engagements || []).map(([ic, t, d]) => `<div class="promise reveal in"><span class="ico"><svg><use href="#${ic}"/></svg></span><b>${t}</b><p>${d}</p></div>`).join("");
   const F = C.fondateur || {};
   if ($("#founderTitle")) {
-    $("#founderTitle").textContent = F.prenom ? `Bonjour, moi c'est ${F.prenom}.` : "Une vraie personne, joignable.";
-    $("#founderText").textContent = F.texte || "";
+    $("#founderTitle").innerHTML = F.prenom ? `Bonjour, moi c'est <em>${F.prenom}.</em>` : "Une vraie personne, <em>joignable.</em>";
+    $("#founderText").textContent = F.texte ? "« " + F.texte + " »" : "";
     if (F.photo) { $("#founderPhoto").style.backgroundImage = `url(${F.photo})`; } else { $("#founderInitial").textContent = (F.prenom || "A").charAt(0); }
     if (F.telephone) $("#founderCall").href = "tel:" + F.telephone; else $("#founderCall").style.display = "none";
     if (F.whatsapp) $("#founderWa").href = "https://wa.me/" + F.whatsapp; else $("#founderWa").style.display = "none";
