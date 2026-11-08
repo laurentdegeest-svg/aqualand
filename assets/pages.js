@@ -214,3 +214,14 @@
   const io = new IntersectionObserver(es => { if (es[0].isIntersecting) { io.disconnect(); box.classList.add("go"); } }, { threshold: .3 });
   io.observe(box);
 })();
+
+/* Sommaire du guide : section active */
+(function () {
+  const links = document.querySelectorAll(".g-toc a"); if (!links.length) return;
+  const map = {}; links.forEach(a => map[a.hash.slice(1)] = a);
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    links.forEach(a => a.classList.remove("on")); const a = map[e.target.id]; if (a) a.classList.add("on");
+  }), { rootMargin: "-30% 0px -60% 0px" });
+  document.querySelectorAll(".g-ch").forEach(c => io.observe(c));
+})();
