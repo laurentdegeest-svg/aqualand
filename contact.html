@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Devis et rendez-vous — Aqualand</title>
+<meta name="description" content="Demandez un devis pour votre adoucisseur ou prenez rendez-vous : nous venons chez vous mesurer votre eau et vous conseiller.">
+<meta name="theme-color" content="#060b14">
+<meta property="og:title" content="Devis et rendez-vous — Aqualand">
+<meta property="og:description" content="Demandez un devis pour votre adoucisseur ou prenez rendez-vous : nous venons chez vous mesurer votre eau et vous conseiller.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&h=630&q=80">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=8">
+</head>
+<body data-page="contact" data-dark="1">
+<main>
+
+<section class="page-hero" style="--bg:url('https://images.unsplash.com/photo-1599036629621-07f8cb665695?auto=format&fit=crop&w=2000&q=80')">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Accueil</a> / Devis &amp; rendez-vous</div>
+    <span class="eyebrow">Contact</span>
+    <h1 class="reveal">Devis ou rendez-vous, comme vous préférez.</h1>
+    <p class="lead reveal d1">Le diagnostic en ligne reste le plus rapide, avec −15 %. Pas le temps ? Demandez un devis ou laissez-nous venir chez vous.</p>
+  </div>
+</section>
+<section class="soft">
+  <div class="container"><div class="starts">
+  <div class="start reveal"><span class="start-tag">−15 %</span><div class="ico"><svg><use href="#i-camera"/></svg></div><h3>Diagnostic en ligne</h3><p>2 minutes depuis votre téléphone : code postal, quelques questions, 2 photos. Vous recevez votre offre écrite avec −15 %.</p><button class="btn btn-glow btn-block" data-open-diag>Faire mon diagnostic</button></div>
+  <div class="start reveal d1"><div class="ico"><svg><use href="#i-euro"/></svg></div><h3>Demander un devis</h3><p>Vous préférez nous écrire ? Quelques informations suffisent, nous vous envoyons un devis par e-mail.</p><a class="btn btn-light btn-block" href="contact.html#devis">Demander un devis</a></div>
+  <div class="start reveal d2"><div class="ico"><svg><use href="#i-clock"/></svg></div><h3>Prendre rendez-vous</h3><p>Pas le temps de faire le diagnostic ? Nous venons chez vous, mesurons votre eau et vous conseillons sur place.</p><a class="btn btn-light btn-block" href="contact.html#rdv">Prendre rendez-vous</a></div>
+</div></div>
+</section>
+<section id="formulaires">
+  <div class="container form-wrap">
+    <div class="tabs" role="tablist"><button data-tab="devis" class="active">Je veux un devis</button><button data-tab="rdv">Je veux un rendez-vous</button></div>
+
+    <form data-lead="Devis" data-pane="devis" class="lead-form" novalidate>
+      <h2>Demander un devis</h2>
+      <p class="muted">Réponse par e-mail sous 24 h ouvrables.</p>
+      <div class="grid2">
+        <div class="field"><label>Nom et prénom</label><input name="nom" required autocomplete="name"></div>
+        <div class="field"><label>Code postal</label><input name="code_postal" required inputmode="numeric" maxlength="4" pattern="[0-9]{4}"></div>
+        <div class="field"><label>E-mail</label><input name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label>Téléphone</label><input name="telephone" type="tel" required autocomplete="tel"></div>
+        <div class="field"><label>Personnes dans le ménage</label><select name="personnes"><option>1–2</option><option selected>3–4</option><option>5–6</option><option>7+</option></select></div>
+        <div class="field"><label>Formule souhaitée</label><select name="formule"><option>Installation + abonnement sel</option><option>Installation seule</option><option>Installation + Sérénité</option><option>Je ne sais pas encore</option></select></div>
+      </div>
+      <div class="field"><label>Votre message (facultatif)</label><textarea name="message" rows="3"></textarea></div>
+      <label class="consent"><input type="checkbox" name="consentement" value="Oui" required><span>J'accepte qu'Aqualand utilise ces informations pour me répondre. Elles ne sont jamais revendues.</span></label><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <button class="btn btn-glow" type="submit">Envoyer ma demande de devis</button><p class="form-msg"></p>
+    </form>
+
+    <form data-lead="Rendez-vous" data-pane="rdv" class="lead-form" novalidate hidden>
+      <h2>Prendre rendez-vous à domicile</h2>
+      <p class="muted">Nous venons chez vous, mesurons la dureté de votre eau, regardons l'emplacement et vous remettons une offre. Nous vous rappelons pour confirmer le créneau.</p>
+      <div class="grid2">
+        <div class="field"><label>Nom et prénom</label><input name="nom" required autocomplete="name"></div>
+        <div class="field"><label>Téléphone</label><input name="telephone" type="tel" required autocomplete="tel"></div>
+        <div class="field"><label>E-mail</label><input name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label>Code postal</label><input name="code_postal" required inputmode="numeric" maxlength="4" pattern="[0-9]{4}"></div>
+        <div class="field"><label>Adresse (facultatif)</label><input name="adresse" autocomplete="street-address"></div>
+        <div class="field"><label>Jour souhaité</label><input name="jour" type="date"></div>
+        <div class="field"><label>Moment de la journée</label><select name="moment"><option>Matin</option><option>Après-midi</option><option>Fin de journée</option><option>Peu importe</option></select></div>
+        <div class="field"><label>Votre projet</label><select name="projet"><option>Première installation</option><option>Remplacer un ancien adoucisseur</option><option>Je suis en location / sous contrat</option></select></div>
+      </div>
+      <div class="field"><label>Votre message (facultatif)</label><textarea name="message" rows="3"></textarea></div>
+      <label class="consent"><input type="checkbox" name="consentement" value="Oui" required><span>J'accepte qu'Aqualand utilise ces informations pour me répondre. Elles ne sont jamais revendues.</span></label><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <button class="btn btn-glow" type="submit">Demander mon rendez-vous</button><p class="form-msg"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+<script src="config.js?v=8"></script>
+<script src="assets/layout.js?v=8"></script>
+<script src="app.js?v=8"></script>
+<script src="assets/pages.js?v=8"></script>
+</body>
+</html>

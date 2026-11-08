@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=7">
+<link rel="stylesheet" href="assets/site.css?v=8">
 </head>
 <body data-page="comparer" data-dark="1">
 <main>
@@ -34,6 +34,41 @@
     <p class="muted" style="font-size:13px;margin-top:18px">Évaluation réalisée par Aqualand à partir des caractéristiques publiques des familles de solutions. Les notes portent sur des familles de produits, pas sur des marques.</p>
   </div>
 </section>
+<section class="soft">
+  <div class="container">
+    <div class="center reveal"><span class="eyebrow">Graphique</span><h2>Le profil de chaque solution.</h2><p class="lead">Chaque branche est un critère noté sur 10. Plus la surface est grande et régulière, plus la solution est équilibrée. Choisissez une solution à comparer avec Aqualand.</p></div>
+    <div class="radar-wrap">
+      <div class="radar-box reveal"><svg id="radar" viewBox="0 0 440 400" role="img" aria-label="Graphique radar des notes"></svg>
+        <div class="legend"><span class="lg us">Aqualand</span><span class="lg them" id="radarName">Adoucisseur électronique</span></div></div>
+      <div>
+        <div class="pick" id="radarPick"></div>
+        <div class="why" id="radarWhy"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="center reveal"><span class="eyebrow">Graphique</span><h2>Ce que chaque solution vous coûte, année après année.</h2><p class="lead">Coût cumulé pour une famille de 4 avec une eau à 32 °f : achat et pose, puis chaque année le sel, l'électricité, l'entretien ou le loyer.</p></div>
+    <div class="linechart reveal"><svg id="costChart" viewBox="0 0 900 420" role="img" aria-label="Coût cumulé sur 10 ans"></svg><div class="legend" id="costLegend"></div></div>
+    <p class="muted center" style="font-size:13px;margin-top:14px">Estimation indicative, TVAC. Hypothèses modifiables dans le simulateur plus bas. Votre offre personnalisée fait foi.</p>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="container">
+    <div class="center reveal"><span class="eyebrow">Comment ça fonctionne</span><h2>Cinq technologies, cinq principes.</h2><p class="lead">Avant de comparer les prix, il faut comprendre ce que chaque solution fait vraiment à votre eau.</p></div>
+    <div class="techs">
+      <div class="techc us reveal"><span>Aqualand</span><h3>Échange d'ions, commande hydraulique</h3><p>La résine retire le calcaire. Un compteur hydraulique déclenche la régénération selon l'eau réellement consommée. Aucune électricité.</p><ul><li class="p">Retire vraiment le calcaire</li><li class="p">Rien d'électronique à réparer</li><li class="p">Sobre en sel et en eau</li><li class="m">Demande du sel (livré par abonnement)</li></ul></div>
+      <div class="techc reveal d1"><span>Électronique</span><h3>Échange d'ions, carte électronique</h3><p>Même principe d'adoucissement, mais piloté par une carte, une horloge ou une application. Branché en permanence.</p><ul><li class="p">Retire vraiment le calcaire</li><li class="m">Consomme de l'électricité</li><li class="m">Électronique pouvant tomber en panne</li><li class="m">Souvent lié à un contrat</li></ul></div>
+      <div class="techc reveal d2"><span>Location</span><h3>Appareil loué tout compris</h3><p>Un adoucisseur classique, mais vous payez un loyer mensuel au lieu de l'acheter. L'appareil ne vous appartient jamais.</p><ul><li class="p">Peu d'argent au départ</li><li class="m">Le plus cher sur 10 ans</li><li class="m">Engagement de plusieurs années</li></ul></div>
+      <div class="techc reveal d3"><span>CO2</span><h3>Injection de dioxyde de carbone</h3><p>Le CO2 stabilise le calcaire pour limiter les dépôts. Il ne le retire pas : l'eau reste dure.</p><ul><li class="p">Pas de sel</li><li class="m">N'adoucit pas l'eau</li><li class="m">Bouteilles à remplacer</li></ul></div>
+      <div class="techc reveal"><span>Magnétique</span><h3>Aimants ou ondes électroniques</h3><p>Un boîtier autour du tuyau est censé modifier le calcaire. Son efficacité n'est pas démontrée de façon fiable.</p><ul><li class="p">Bon marché, rien à entretenir</li><li class="m">Efficacité non prouvée</li><li class="m">L'eau reste dure</li></ul></div>
+    </div>
+  </div>
+</section>
+
 <section class="soft">
   <div class="container">
     <div class="center reveal"><span class="eyebrow"><i></i>Point par point</span><h2>Le détail, <span class="grad-text">critère par critère.</span></h2></div>
@@ -77,9 +112,9 @@
 </div></div></section>
 
 </main>
-<script src="config.js?v=7"></script>
-<script src="assets/layout.js?v=7"></script>
-<script src="app.js?v=7"></script>
-<script src="assets/pages.js?v=7"></script>
+<script src="config.js?v=8"></script>
+<script src="assets/layout.js?v=8"></script>
+<script src="app.js?v=8"></script>
+<script src="assets/pages.js?v=8"></script>
 </body>
 </html>
