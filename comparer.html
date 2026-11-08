@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Comparer les solutions anticalcaire — notes sur 10 | Aqualand</title>
+<meta name="description" content="Adoucisseur hydraulique, électronique, location, CO2, magnétique : chaque solution notée sur 10 selon 6 critères. Simulateur de coût sur 10 ans.">
+<meta name="theme-color" content="#060b14">
+<meta property="og:title" content="Comparer les solutions anticalcaire — notes sur 10 | Aqualand">
+<meta property="og:description" content="Adoucisseur hydraulique, électronique, location, CO2, magnétique : chaque solution notée sur 10 selon 6 critères. Simulateur de coût sur 10 ans.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&h=630&q=80">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=4">
+</head>
+<body data-page="comparer" data-dark="1">
+<main>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Accueil</a> / Comparer</div>
+    <span class="eyebrow"><i></i>Comparatif</span>
+    <h1 class="reveal">Toutes les solutions,<br><span class="grad-text">notées sur 10.</span></h1>
+    <p class="lead reveal d1">Six critères, des pondérations visibles, et le détail de chaque note. Cliquez sur une solution pour voir comment elle est notée.</p>
+  </div>
+</section>
+<section style="padding-top:60px">
+  <div class="container">
+    <div class="weights" data-weights></div>
+    <div class="scoreboard" data-scoreboard="5"></div>
+    <p class="muted" style="font-size:13px;margin-top:18px">Évaluation réalisée par Aqualand à partir des caractéristiques publiques des familles de solutions. Les notes portent sur des familles de produits, pas sur des marques.</p>
+  </div>
+</section>
+<section class="soft">
+  <div class="container">
+    <div class="center reveal"><span class="eyebrow"><i></i>Point par point</span><h2>Le détail, <span class="grad-text">critère par critère.</span></h2></div>
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <thead><tr><th>Critère</th><th class="us">Aqualand<br><small>hydraulique au sel</small></th><th>Adoucisseur électronique</th><th>Location tout compris</th><th>Traitement CO2</th><th>Magnétique / anti-calcaire</th></tr></thead>
+        <tbody>
+          <tr><td>Retire réellement le calcaire</td><td class="us yes">Oui</td><td class="yes">Oui</td><td class="yes">Oui</td><td class="mid">Non, le stabilise</td><td class="no">Non prouvé</td></tr>
+          <tr><td>Électricité nécessaire</td><td class="us yes">Aucune</td><td class="no">Oui</td><td class="no">Oui</td><td class="yes">Non</td><td class="mid">Souvent</td></tr>
+          <tr><td>Électronique pouvant tomber en panne</td><td class="us yes">Non</td><td class="no">Oui</td><td class="no">Oui</td><td class="yes">Non</td><td class="mid">Selon modèle</td></tr>
+          <tr><td>Encombrement</td><td class="us yes">Très compact</td><td class="mid">Moyen à grand</td><td class="mid">Moyen à grand</td><td class="mid">Moyen</td><td class="yes">Petit</td></tr>
+          <tr><td>Coût sur 10 ans (famille de 4)</td><td class="us yes">Bas</td><td class="mid">Moyen à élevé</td><td class="no">Élevé</td><td class="mid">Moyen</td><td class="mid">Bas, mais efficacité faible</td></tr>
+          <tr><td>Engagement</td><td class="us yes">Aucun</td><td class="mid">Contrat souvent exigé</td><td class="no">Plusieurs années</td><td class="mid">Variable</td><td class="yes">Aucun</td></tr>
+          <tr><td>Sel livré automatiquement</td><td class="us yes">Oui</td><td class="mid">Parfois</td><td class="yes">Oui</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<section class="dark" id="economies">
+  <div class="container">
+    <span class="eyebrow"><i></i>Simulateur</span>
+    <h2>Le vrai coût, <span class="grad-text">sur 10 ans.</span></h2>
+    <p class="lead">Réglez votre ménage et la dureté de votre eau : appareil, pose, sel, électricité et entretien sont additionnés.</p>
+    <div class="eco-grid">
+      <div class="panel">
+        <div class="range"><label for="rPers">Personnes dans le ménage <output id="oPers">4</output></label><input type="range" id="rPers" min="1" max="8" value="4"></div>
+        <div class="range"><label for="rHard">Dureté de votre eau <output id="oHard">32 °f</output></label><input type="range" id="rHard" min="15" max="45" value="32"></div>
+        <div class="mini-stats"><div><b id="sSalt">—</b><small>kg de sel par an</small></div><div><b id="sBags">—</b><small>sacs de 4 kg par an</small></div></div>
+        <button class="btn btn-glow btn-block" style="margin-top:22px" data-open-diag>Obtenir mon offre −15 %</button>
+      </div>
+      <div class="panel"><div class="bars" id="bars"></div><div class="eco-save" id="ecoSave"></div><p class="fine" id="ecoFine"></p></div>
+    </div>
+  </div>
+</section>
+<section><div class="container"><div class="cta reveal">
+  <span class="eyebrow"><i></i>Diagnostic gratuit</span>
+  <h2>Votre eau douce,<br><span class="grad-text">en 2 minutes.</span></h2>
+  <p>Code postal, quelques questions, 2 photos. Vous recevez une offre écrite à prix fixe, avec −15 % sur votre installation.</p>
+  <button class="btn btn-glow" data-open-diag>Commencer mon diagnostic <svg><use href="#i-arrow"/></svg></button>
+</div></div></section>
+
+</main>
+<script src="config.js?v=4"></script>
+<script src="assets/layout.js?v=4"></script>
+<script src="app.js?v=4"></script>
+<script src="assets/pages.js?v=4"></script>
+</body>
+</html>

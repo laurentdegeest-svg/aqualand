@@ -50,6 +50,9 @@ window.AQUALAND = {
   // Utilisé uniquement pour le simulateur sur 10 ans.
   prixIndicatifInstallation: 1479,
 
+  // Formule "Tout-en-un" (0 € à l'installation) — nécessite un partenaire de financement
+  toutEnUn: { mensualite: "44 €", duree: "60 mois" },
+
   // Abonnements (affichés sur la page)
   prixAbonnements: { sel: "12,90 €", serenite: "19,90 €" },
 

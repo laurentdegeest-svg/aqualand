@@ -3,525 +3,169 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Aqualand — Adoucisseur d'eau posé, prix affiché, sans contrat | −15 %</title>
-<meta name="description" content="Adoucisseur d'eau belge sans électricité, posé par nos techniciens à prix fixe affiché, sel livré chez vous. Testez votre eau et obtenez −15 % avec le diagnostic en ligne.">
-<meta name="theme-color" content="#ffffff">
-<meta property="og:title" content="Aqualand — Fini le calcaire, sans vendeur ni contrat">
-<meta property="og:description" content="Diagnostic en 2 minutes, prix affiché, −15 % sur votre installation.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1400&h=1750&q=80">
+<title>Aqualand — L'eau douce en abonnement · Adoucisseur sans électricité</title>
+<meta name="description" content="Adoucisseur d'eau belge sans électricité, installé à prix fixe, sel livré automatiquement. Testez votre eau et obtenez −15 % avec le diagnostic en ligne.">
+<meta name="theme-color" content="#060b14">
+<meta property="og:title" content="Aqualand — L'eau douce en abonnement · Adoucisseur sans électricité">
+<meta property="og:description" content="Adoucisseur d'eau belge sans électricité, installé à prix fixe, sel livré automatiquement. Testez votre eau et obtenez −15 % avec le diagnostic en ligne.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&h=630&q=80">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=4">
 </head>
-<body>
-
-<!-- Icon sprite -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
-  <symbol id="i-bolt-off" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 4.5-6M14.5 10H20l-3 4"/><path d="M3 3l18 18"/></g></symbol>
-  <symbol id="i-box" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></g></symbol>
-  <symbol id="i-drop" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 2.5s7 7.6 7 12.5a7 7 0 01-14 0c0-4.9 7-12.5 7-12.5z"/></symbol>
-  <symbol id="i-flag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></g></symbol>
-  <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
-  <symbol id="i-truck" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M2 6h12v10H2zM14 10h4l4 4v2h-8z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></g></symbol>
-  <symbol id="i-euro" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6.5A7 7 0 1018 17.5M4 10h9M4 14h9"/></g></symbol>
-  <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5 4.5-4.5" stroke-linecap="round"/></g></symbol>
-  <symbol id="i-camera" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 8h4l2-3h6l2 3h4v12H3z"/><circle cx="12" cy="13.5" r="3.5"/></g></symbol>
-  <symbol id="i-heater" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="6" y="3" width="12" height="18" rx="3"/><path d="M10 8c0 1.5 2 1.5 2 3s-2 1.5-2 3M14 8c0 1.5 2 1.5 2 3s-2 1.5-2 3"/></g></symbol>
-  <symbol id="i-sparkle" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></symbol>
-  <symbol id="i-hand" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3c3 4 6 7 6 11a6 6 0 01-12 0c0-4 3-7 6-11z"/><path d="M9.5 14.5a2.5 2.5 0 002.5 2.5"/></g></symbol>
-  <symbol id="i-coffee" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v5a5 5 0 01-5 5H9a5 5 0 01-5-5zM17 11h1.5a2.5 2.5 0 010 5H17"/><path d="M8 3v3M12 3v3"/></g></symbol>
-  <symbol id="i-leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-9 6-14 15-14 0 9-5 15-14 15"/><path d="M5 19l8-8"/></g></symbol>
-</svg>
-
-<header class="header" id="header">
-  <div class="container nav">
-    <a href="#" class="logo" aria-label="Aqualand, accueil">
-      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3s12 13 12 21a12 12 0 01-24 0C8 16 20 3 20 3z" fill="#1d5f86"/><path d="M13 25c2.5 2 4.5-2 7 0s4.5-2 7 0" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
-      Aqualand
-    </a>
-    <ul class="nav-links">
-      <li><a href="#pourquoi">Pourquoi nous</a></li>
-      <li><a href="#prix">Prix</a></li>
-      <li><a href="#technologie">Technologie</a></li>
-      <li><a href="#economies">Économies</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-    <button class="btn btn-primary" data-open-diag>Diagnostic −15 %</button>
-  </div>
-</header>
-
+<body data-page="" data-dark="1">
 <main>
-<!-- HERO -->
-<section class="hero" id="top">
+
+<section class="hero">
+  <canvas id="flow" aria-hidden="true"></canvas>
   <div class="container hero-grid">
     <div>
-      <div class="promo-tag"><b>−15 %</b> avec le diagnostic en ligne</div>
-      <h1>Fini le calcaire.<br><em>Sans vendeur, sans contrat.</em></h1>
-      <p class="lead">Un adoucisseur belge, sans électricité, posé chez vous par notre technicien à un prix fixe annoncé d'avance. Ensuite, le sel arrive tout seul. Vous n'avez plus rien à gérer.</p>
-      <div class="price-line">
-        <small>Installation complète, pose comprise</small>
-        <s data-cfg="prixBarre"></s><strong data-cfg="prixPromo"></strong><em>TVAC 6 %</em>
-        <span class="tag">Prix fixe, sans surprise</span>
+      <div class="promo-pill reveal"><b>−15 %</b> avec le diagnostic en ligne</div>
+      <h1 class="reveal d1">L'eau douce,<br><span class="grad-text">en abonnement.</span></h1>
+      <p class="lead reveal d2">Un adoucisseur belge qui fonctionne sans électricité, installé chez vous à prix fixe. Ensuite, le sel arrive tout seul et l'entretien est planifié. Vous n'avez plus jamais à y penser.</p>
+      <div class="hero-ctas reveal d3">
+        <button class="btn btn-glow" data-open-diag>Faire mon diagnostic <svg><use href="#i-arrow"/></svg></button>
+        <a class="btn btn-outline" href="solution.html">Découvrir la solution</a>
       </div>
-      <div class="hero-check" id="heroCheck">
-        <label for="heroCp">Votre eau est-elle calcaire ? Testez maintenant</label>
-        <div class="hero-check-row">
-          <input id="heroCp" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="Code postal" autocomplete="postal-code" aria-label="Code postal">
-          <button class="btn btn-primary" id="heroGo" type="button">Voir le résultat</button>
-        </div>
-        <div class="hero-result" id="heroResult" aria-live="polite"></div>
-      </div>
-      <div class="hero-points">
-        <span><svg><use href="#i-check"/></svg>Réponse en 2 minutes</span>
-        <span><svg><use href="#i-check"/></svg>Aucun commercial chez vous</span>
-        <span><svg><use href="#i-check"/></svg>Sans engagement</span>
+      <div class="chip-row reveal d3">
+        <span class="chip"><svg><use href="#i-bolt-off"/></svg><b>0 kWh</b></span>
+        <span class="chip"><svg><use href="#i-flag"/></svg>Made in Belgium</span>
+        <span class="chip"><svg><use href="#i-clock"/></svg>Pose ± 2 h</span>
+        <span class="chip"><svg><use href="#i-repeat"/></svg>Sans engagement</span>
       </div>
     </div>
-    <div class="hero-media">
-      <div class="ph"><img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1400&h=1750&q=80" srcset="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=800&h=1000&q=80 800w, https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1400&h=1750&q=80 1400w" sizes="(max-width:960px) 100vw, 50vw" alt="Salle de bain lumineuse avec baignoire blanche" fetchpriority="high"></div>
-      <div class="float f1"><span class="ico"><svg><use href="#i-bolt-off"/></svg></span><div><b>0 kWh</b><small>Aucune électricité</small></div></div>
-      <div class="float f2"><span class="ico"><svg><use href="#i-clock"/></svg></span><div><b>± 2 heures</b><small>Pose par notre technicien</small></div></div>
+    <div class="product-stage reveal">
+  <div class="halo"></div><div class="floor"></div>
+  <div class="product-3d" data-product></div>
+  <div class="tag3d t1"><b>0 kWh</b>Aucune électricité</div>
+  <div class="tag3d t2"><b>48 × 54 × 24 cm</b>Ultra compact</div>
+  <div class="tag3d t3"><b>Made in Belgium</b>Pièces &amp; SAV locaux</div>
+</div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track">
+  <span>Zéro électricité</span><span>Fabriqué en Belgique</span><span>Prix fixe affiché</span><span>Sel livré automatiquement</span><span>Pose en ± 2 heures</span><span>Résiliable en un clic</span><span>Régénération à la demande</span><span>Diagnostic en 2 minutes</span><span>Zéro électricité</span><span>Fabriqué en Belgique</span><span>Prix fixe affiché</span><span>Sel livré automatiquement</span><span>Pose en ± 2 heures</span><span>Résiliable en un clic</span><span>Régénération à la demande</span><span>Diagnostic en 2 minutes</span>
+</div></div>
+
+<section>
+  <div class="container">
+    <span class="eyebrow reveal"><i></i>Le nouveau modèle</span>
+    <h2 class="reveal" style="max-width:860px">Avoir un adoucisseur, c'était compliqué. <span class="grad-text">On l'a rendu simple.</span></h2>
+    <p class="lead reveal">Pas de commercial chez vous, pas de devis flou, pas de contrat de 10 ans. Un produit robuste, un prix clair, et un service qui tourne tout seul.</p>
+    <div class="stats">
+      <div class="stat reveal"><b><span data-count="0">0</span><small>kWh</small></b><span>d'électricité consommée</span></div>
+      <div class="stat reveal d1"><b>± <span data-count="2">0</span><small>h</small></b><span>pour une pose standard</span></div>
+      <div class="stat reveal d2"><b><span data-count="300">0</span><small>g</small></b><span>de sel par régénération</span></div>
+      <div class="stat reveal d3"><b><span data-count="promo">0</span><small>€</small></b><span>tout compris, pose incluse</span></div>
     </div>
   </div>
 </section>
 
-<!-- TRUST -->
-<div class="trust">
-  <div class="container trust-grid">
-    <div class="trust-item"><span class="ico"><svg><use href="#i-flag"/></svg></span><div><b>Fabriqué en Belgique</b>Pièces et SAV locaux</div></div>
-    <div class="trust-item"><span class="ico"><svg><use href="#i-euro"/></svg></span><div><b>Prix affiché</b>Offre écrite à prix fixe</div></div>
-    <div class="trust-item"><span class="ico"><svg><use href="#i-hand"/></svg></span><div><b>Sans engagement</b>Résiliable en un clic</div></div>
-    <div class="trust-item"><span class="ico"><svg><use href="#i-truck"/></svg></span><div><b>Sel livré</b>Au bon moment</div></div>
+<section class="soft">
+  <div class="container">
+    <div class="center reveal"><span class="eyebrow"><i></i>Pourquoi Aqualand</span><h2>Pensé pour durer.<br><span class="grad-text">Conçu pour être oublié.</span></h2></div>
+    <div class="bento">
+      <div class="cell dark w2 reveal"><div class="big grad-text">0 kWh</div><h3>Zéro électricité</h3><p>Commande 100 % hydraulique : pas de prise, pas de carte électronique, rien qui tombe en panne.</p></div>
+      <div class="cell photo w4 reveal d1"><img loading="lazy" src="https://images.unsplash.com/photo-1750045662252-7f8a2b36ba37?auto=format&fit=crop&w=1200&h=700&q=80" alt="Douche baignée de lumière"><h3>Une eau qui fait du bien</h3><p>Peau moins sèche, savon qui mousse, parois sans traces.</p></div>
+      <div class="cell w2 half reveal"><div class="ic"><svg><use href="#i-drop"/></svg></div><h3>Régénère à la demande</h3><p>Selon votre consommation réelle, jamais selon un calendrier.</p></div>
+      <div class="cell w2 half reveal d1"><div class="ic"><svg><use href="#i-truck"/></svg></div><h3>Sel livré tout seul</h3><p>La fréquence est calculée pour votre eau et votre ménage.</p></div>
+      <div class="cell w2 reveal d2"><div class="ic"><svg><use href="#i-flag"/></svg></div><h3>Made in Belgium</h3><p>Conçu et assemblé en Belgique. Pièces disponibles, réparation rapide.</p></div>
+      <div class="cell photo w3 reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=1000&h=700&q=80" alt="Technicien raccordant une installation"><h3>Posé en ± 2 heures</h3><p>Grâce à vos photos, le technicien arrive avec tout le nécessaire.</p></div>
+      <div class="cell dark w3 reveal d1"><div class="ic"><svg><use href="#i-repeat"/></svg></div><h3>Résiliable en un clic</h3><p>Abonnement mensuel, sans durée minimale. Vous restez parce que c'est pratique, pas parce que vous êtes coincé.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="container split">
+    <div>
+      <span class="eyebrow reveal"><i></i>Analyse instantanée</span>
+      <h2 class="reveal">Votre eau est-elle <span class="grad-text">calcaire ?</span></h2>
+      <p class="lead reveal">En Belgique, la dureté varie de moins de 15 °f à plus de 40 °f selon la commune. Entrez votre code postal : vous saurez en une seconde si un adoucisseur vous sera utile.</p>
+    </div>
+    <div class="checker reveal" id="heroCheck">
+  <label for="heroCp">Testez votre eau : entrez votre code postal</label>
+  <div class="checker-row"><input id="heroCp" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="ex. 1300" autocomplete="postal-code" aria-label="Code postal"><button class="btn btn-glow" id="heroGo" type="button">Analyser</button></div>
+  <div class="hero-result" id="heroResult" aria-live="polite"></div>
+</div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="split" style="align-items:end">
+      <div><span class="eyebrow reveal"><i></i>Comparatif noté</span><h2 class="reveal">Les solutions,<br><span class="grad-text">notées sur 10.</span></h2></div>
+      <p class="lead reveal">Efficacité, coût sur 10 ans, fiabilité, simplicité, encombrement, liberté : nous notons chaque solution sur les mêmes critères, avec des pondérations visibles.</p>
+    </div>
+    <div class="scoreboard" data-scoreboard="5"></div>
+    <div class="center" style="margin-top:32px"><a class="btn btn-light" href="comparer.html">Voir le comparatif complet <svg><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="container">
+    <span class="eyebrow reveal"><i></i>Comment ça marche</span>
+    <h2 class="reveal">De votre téléphone<br><span class="grad-text">à l'eau douce.</span></h2>
+    <div class="steps">
+      <div class="stepc reveal"><h3>Diagnostic en ligne</h3><p>2 minutes : code postal, quelques questions et 2 photos de votre installation.</p></div>
+      <div class="stepc reveal d1"><h3>Offre écrite sous 24 h</h3><p>Le bon modèle, un prix fixe, vos −15 %. Vous acceptez en ligne, ou pas.</p></div>
+      <div class="stepc reveal d2"><h3>Pose à la date choisie</h3><p>Environ 2 heures sur place. Réglage précis sur la dureté de votre eau.</p></div>
+      <div class="stepc reveal d3"><h3>Pilotage automatique</h3><p>Sel livré au bon moment, entretien planifié, une personne joignable.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="center reveal"><span class="eyebrow"><i></i>Tarifs</span><h2>Achetez-le. Ou <span class="grad-text">abonnez-vous.</span></h2><p class="lead">Trois façons d'avoir de l'eau douce, toutes sans mauvaise surprise.</p></div>
+    <div class="pricing">
+  <div class="price-card reveal">
+    <h3>Achat</h3><p class="muted">Vous êtes propriétaire, tout simplement.</p>
+    <div class="amount"><s data-cfg="prixBarre"></s><span data-cfg="prixPromo"></span></div><small class="muted">une fois, TVAC 6 %, pose comprise</small>
+    <ul><li>Adoucisseur Compact</li><li>Pose par notre technicien</li><li>Réglage sur votre eau</li><li>Premier sel inclus</li><li>Sel Auto en option</li></ul>
+    <button class="btn btn-light btn-block" data-open-diag>Obtenir mon offre</button>
+  </div>
+  <div class="price-card feat reveal d1">
+    <span class="badge">Nouveau · 0 € à l'installation</span>
+    <h3>Tout-en-un</h3><p class="muted">L'eau douce comme un service.</p>
+    <div class="amount"><span data-cfg-plan="mensualite"></span> <small>/ mois</small></div><small class="muted">pendant <span data-cfg-plan="duree"></span>, puis l'appareil est à vous</small>
+    <ul><li>0 € à payer au départ</li><li>Appareil + pose + réglage</li><li>Sel livré automatiquement</li><li>Entretien annuel inclus</li><li>Pièces d'usure et assistance prioritaire</li></ul>
+    <button class="btn btn-glow btn-block" data-open-diag>Je veux cette formule</button>
+  </div>
+  <div class="price-card reveal d2">
+    <h3>Achat + Sérénité</h3><p class="muted">Propriétaire, sans rien gérer.</p>
+    <div class="amount"><span data-price="serenite"></span> <small>/ mois</small></div><small class="muted">+ l'installation au prix d'achat</small>
+    <ul><li>Tout le contenu de l'Achat</li><li>Sel livré automatiquement</li><li>Entretien annuel à domicile</li><li>Analyse de l'eau</li><li>Résiliable en un clic</li></ul>
+    <button class="btn btn-light btn-block" data-open-diag>Obtenir mon offre</button>
   </div>
 </div>
-
-<!-- BENEFITS -->
-<section id="avantages">
-  <div class="container">
-    <div class="center reveal">
-      <span class="eyebrow">Ce que l'eau douce change</span>
-      <h2>Le calcaire, on ne le voit pas.<br><em>Ses effets, si.</em></h2>
-      <p class="lead">Dans une grande partie de la Belgique, l'eau est dure, voire très dure. Un adoucisseur protège votre maison tous les jours, sans que vous y pensiez.</p>
-    </div>
-    <div class="benefits">
-      <article class="benefit reveal"><div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1750045662252-7f8a2b36ba37?auto=format&fit=crop&w=900&h=675&q=80" alt="Douche baignée de lumière"></div><div class="txt"><h3>Une douche qui fait du bien</h3><p>Le savon mousse mieux, on en utilise moins. Plus de traces sur les parois ni de pommeau entartré.</p></div></article>
-      <article class="benefit reveal"><div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1757787697646-e84d5490add1?auto=format&fit=crop&w=900&h=675&q=80" alt="Cuisine moderne avec robinet noir"></div><div class="txt"><h3>Une maison plus facile à entretenir</h3><p>Robinets, évier, carrelage : fini les traces blanches et les heures de détartrage.</p></div></article>
-      <article class="benefit reveal"><div class="img"><img loading="lazy" src="https://images.unsplash.com/photo-1761839258568-fd466a93f68b?auto=format&fit=crop&w=900&h=675&q=80" alt="Famille qui cuisine ensemble"></div><div class="txt"><h3>Des appareils qui durent</h3><p>Chauffe-eau, chaudière, lave-linge, machine à café : le tartre ne les abîme plus.</p></div></article>
-    </div>
   </div>
 </section>
 
-<!-- WHY -->
-<section class="why" id="pourquoi">
-  <div class="container">
-    <div class="center reveal">
-      <span class="eyebrow">Pourquoi Aqualand</span>
-      <h2>Acheter un adoucisseur,<br><em>sans la négociation.</em></h2>
-      <p class="lead">Habituellement, c'est un commercial chez vous, un devis flou et un contrat de plusieurs années. Nous avons fait exactement l'inverse.</p>
-    </div>
-    <div class="vs reveal">
-      <div class="vs-col vs-them">
-        <h3>Souvent ailleurs</h3>
-        <ul>
-          <li>Le prix seulement après la visite d'un commercial</li>
-          <li>Un rendez-vous d'une heure et demie pour vous convaincre</li>
-          <li>Un contrat d'entretien de 3 à 10 ans, difficile à résilier</li>
-          <li>Un appareil électronique, avec carte et programmateur</li>
-          <li>Le sel à racheter et à porter vous-même</li>
-        </ul>
-      </div>
-      <div class="vs-col vs-us">
-        <h3>Chez Aqualand</h3>
-        <ul>
-          <li>Le prix affiché ici, puis une offre écrite à prix fixe</li>
-          <li>Un diagnostic de 2 minutes depuis votre téléphone</li>
-          <li>Un abonnement mensuel, résiliable en un clic</li>
-          <li>Un appareil 100 % hydraulique : rien d'électrique à réparer</li>
-          <li>Le sel livré chez vous au bon moment</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INCLUDED -->
-<section id="prix">
-  <div class="container included">
-    <div class="incl-media reveal">
-      <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=1100&h=1100&q=80" alt="Technicien raccordant une installation sous un évier"></div>
-      <div class="price-card"><small>Tout compris, pose incluse</small><s data-cfg="prixBarre"></s><strong data-cfg="prixPromo"></strong><small>TVAC 6 % · avec le diagnostic</small></div>
-    </div>
-    <div class="reveal">
-      <span class="eyebrow">Ce que vous payez</span>
-      <h2>Un prix.<br><em>Tout compris.</em></h2>
-      <p class="lead">Aucun frais caché, aucun supplément le jour de la pose pour une installation standard.</p>
-      <ul class="incl-list">
-        <li><span class="ico"><svg><use href="#i-box"/></svg></span><div><b>L'adoucisseur compact</b>Fabriqué en Belgique, sans électricité, 48 × 54 × 24 cm.</div></li>
-        <li><span class="ico"><svg><use href="#i-clock"/></svg></span><div><b>La pose par notre technicien</b>Raccordement, by-pass et évacuation, environ 2 heures.</div></li>
-        <li><span class="ico"><svg><use href="#i-drop"/></svg></span><div><b>Le réglage sur votre eau</b>Mesure de la dureté sur place, réglage idéal entre 8 et 15 °f.</div></li>
-        <li><span class="ico"><svg><use href="#i-truck"/></svg></span><div><b>Le premier sel et les explications</b>L'appareil fonctionne dès notre départ, et vous savez qui appeler.</div></li>
-      </ul>
-      <button class="btn btn-primary" data-open-diag>Réserver mon prix −15 %</button>
-      <p class="fine-dark">Pour un logement de plus de 10 ans. Si un raccord spécial est nécessaire, nous l'indiquons dans l'offre, avant toute intervention.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TECH -->
-<section class="tech" id="technologie">
-  <div class="container tech-grid">
-    <div class="reveal">
-      <div class="tech-anim">
-        <svg viewBox="0 0 420 300" role="img" aria-label="Schéma du fonctionnement de l'adoucisseur">
-          <defs><linearGradient id="col" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0d4f86"/><stop offset="1" stop-color="#0a3a66"/></linearGradient></defs>
-          <!-- pipes -->
-          <path d="M10 70 H140" stroke="#ffb38f" stroke-width="10" stroke-linecap="round"/>
-          <path id="pipeIn" class="flow" d="M10 70 H140" stroke="#fff" stroke-width="3" fill="none"/>
-          <path d="M280 230 H410" stroke="#7ef0cf" stroke-width="10" stroke-linecap="round"/>
-          <path class="flow" d="M280 230 H410" stroke="#fff" stroke-width="3" fill="none"/>
-          <text x="12" y="52" fill="#ffd2bf" font-size="13" font-weight="700">Eau dure</text>
-          <text x="330" y="262" fill="#9ff3ff" font-size="13" font-weight="700">Eau douce</text>
-          <!-- column -->
-          <rect x="140" y="30" width="140" height="240" rx="30" fill="url(#col)" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
-          <g id="resin"></g>
-          <text x="210" y="290" fill="rgba(255,255,255,.7)" font-size="12" text-anchor="middle">Colonne de résine</text>
-          <!-- salt -->
-          <g id="saltTank" opacity=".35">
-            <rect x="300" y="40" width="96" height="120" rx="16" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.35)" stroke-width="2"/>
-            <rect x="314" y="100" width="22" height="22" rx="4" fill="#fff"/><rect x="340" y="110" width="22" height="22" rx="4" fill="#fff"/><rect x="326" y="126" width="22" height="22" rx="4" fill="#fff"/><rect x="354" y="88" width="22" height="22" rx="4" fill="#fff"/>
-            <text x="348" y="62" fill="#fff" font-size="12" text-anchor="middle" font-weight="700">Sel</text>
-            <path class="flow" d="M300 140 C 290 140 290 120 280 120" stroke="#fff" stroke-width="3" fill="none"/>
-          </g>
-        </svg>
-        <div class="steps-tech" role="tablist">
-          <button class="active" data-phase="0" role="tab">1. Adoucissement</button>
-          <button data-phase="1" role="tab">2. Régénération</button>
-          <button data-phase="2" role="tab">3. Prêt à nouveau</button>
-        </div>
-        <p class="tech-caption" id="techCaption"></p>
-      
-      </div>
-    </div>
-    <div>
-      <span class="eyebrow reveal">La technologie</span>
-      <h2 class="reveal">Simple, robuste,<br><em>sans électricité.</em></h2>
-      <p class="lead reveal">La technique éprouvée de l'échange d'ions, avec une commande 100 % hydraulique : c'est la pression de l'eau qui fait tout le travail.</p>
-      <div class="args">
-        <div class="arg reveal"><span class="ico white"><svg><use href="#i-bolt-off"/></svg></span><div><h3>Zéro électricité</h3><p>Pas de prise, pas de carte électronique, pas d'horloge à reprogrammer. Moins de pièces fragiles, moins de pannes.</p></div></div>
-        <div class="arg reveal"><span class="ico white"><svg><use href="#i-drop"/></svg></span><div><h3>Régénère seulement quand il faut</h3><p>Selon le volume d'eau réellement consommé, pas selon un calendrier. Pas de sel ni d'eau gaspillés.</p></div></div>
-        <div class="arg reveal"><span class="ico white"><svg><use href="#i-leaf"/></svg></span><div><h3>Sobre en sel et en eau</h3><p>Environ 300 g de sel et une vingtaine de litres d'eau par régénération sur le modèle compact.</p></div></div>
-        <div class="arg reveal"><span class="ico white"><svg><use href="#i-box"/></svg></span><div><h3>Très compact</h3><p>Bac à sel intégré : il se glisse dans un placard, sous un évier ou dans une buanderie.</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROMISES -->
-<section id="engagements">
-  <div class="container">
-    <div class="center reveal">
-      <span class="eyebrow">Nos engagements</span>
-      <h2>Vous ne prenez<br><em>aucun risque.</em></h2>
-    </div>
-    <div class="promises" id="promises"></div>
-  </div>
-</section>
-
-<!-- ECO -->
-<section class="eco" id="economies">
-  <div class="container">
-    <span class="eyebrow">Pourquoi c'est économique</span>
-    <h2>Le vrai coût, <em>sur 10 ans.</em></h2>
-    <p class="lead">Le prix d'achat ne dit pas tout. Comparez ce que vous payez sur toute la durée : appareil, pose, sel, électricité et entretien.</p>
-    <div class="eco-grid">
-      <div class="panel">
-        <div class="range"><label for="rPers">Personnes dans le ménage <output id="oPers">4</output></label><input type="range" id="rPers" min="1" max="8" value="4"></div>
-        <div class="range"><label for="rHard">Dureté de votre eau <output id="oHard">32 °f</output></label><input type="range" id="rHard" min="15" max="45" value="32"></div>
-        <div class="mini-stats">
-          <div><b id="sSalt">—</b><small>kg de sel par an</small></div>
-          <div><b id="sBags">—</b><small>sacs de 4 kg par an</small></div>
-        </div>
-        <button class="btn btn-primary btn-block" style="margin-top:22px" data-open-diag>Obtenir mon offre −15 %</button>
-      </div>
-      <div class="panel">
-        <div class="bars" id="bars"></div>
-        <div class="eco-save" id="ecoSave"></div>
-        <p class="fine" id="ecoFine"></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPARE -->
-<section id="comparatif">
-  <div class="container">
-    <div class="center reveal">
-      <span class="eyebrow">Comparatif</span>
-      <h2>Quelle solution<br><em>contre le calcaire ?</em></h2>
-      <p class="lead">Toutes les solutions ne se valent pas. Voici une comparaison honnête des grandes familles de traitement.</p>
-    </div>
-    <div class="table-wrap reveal">
-      <table class="cmp">
-        <thead><tr><th>Critère</th><th class="us">Aqualand<br><small>hydraulique au sel</small></th><th>Adoucisseur électronique</th><th>Location tout compris</th><th>Traitement CO2</th><th>Magnétique / anti-calcaire</th></tr></thead>
-        <tbody>
-          <tr><td>Retire réellement le calcaire</td><td class="us yes">Oui</td><td class="yes">Oui</td><td class="yes">Oui</td><td class="mid">Non, le stabilise</td><td class="no">Non prouvé</td></tr>
-          <tr><td>Électricité nécessaire</td><td class="us yes">Aucune</td><td class="no">Oui</td><td class="no">Oui</td><td class="yes">Non</td><td class="mid">Souvent</td></tr>
-          <tr><td>Électronique pouvant tomber en panne</td><td class="us yes">Non</td><td class="no">Oui</td><td class="no">Oui</td><td class="yes">Non</td><td class="mid">Selon modèle</td></tr>
-          <tr><td>Encombrement</td><td class="us yes">Très compact</td><td class="mid">Moyen à grand</td><td class="mid">Moyen à grand</td><td class="mid">Moyen</td><td class="yes">Petit</td></tr>
-          <tr><td>Coût sur 10 ans (famille de 4)</td><td class="us yes">Bas</td><td class="mid">Moyen à élevé</td><td class="no">Élevé</td><td class="mid">Moyen</td><td class="mid">Bas, mais efficacité faible</td></tr>
-          <tr><td>Engagement</td><td class="us yes">Aucun</td><td class="mid">Contrat souvent exigé</td><td class="no">Plusieurs années</td><td class="mid">Variable</td><td class="yes">Aucun</td></tr>
-          <tr><td>Sel livré automatiquement</td><td class="us yes">Oui</td><td class="mid">Parfois</td><td class="yes">Oui</td><td>—</td><td>—</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- FOUNDER -->
-<section class="founder-sec" id="qui">
+<section class="soft" id="qui">
   <div class="container founder reveal">
     <div class="founder-photo" id="founderPhoto"><span id="founderInitial"></span></div>
-    <div>
-      <span class="eyebrow">Qui est derrière Aqualand</span>
-      <h2 id="founderTitle"></h2>
-      <blockquote id="founderText"></blockquote>
-      <div class="founder-actions">
-        <a class="btn btn-primary" id="founderCall" href="#">Appeler</a>
-        <a class="btn btn-light" id="founderWa" href="#" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-    </div>
+    <div><span class="eyebrow"><i></i>Qui est derrière Aqualand</span><h2 id="founderTitle"></h2><blockquote id="founderText"></blockquote>
+    <div class="founder-actions"><a class="btn btn-primary" id="founderCall" href="#">Appeler</a><a class="btn btn-light" id="founderWa" href="#" target="_blank" rel="noopener">WhatsApp</a></div></div>
   </div>
 </section>
 
-<!-- REVIEWS (affiché seulement avec de vrais avis dans config.js) -->
-<section id="avis" style="display:none">
-  <div class="container">
-    <div class="center reveal"><span class="eyebrow">Avis clients</span><h2>Ils ont dit <em>adieu au calcaire.</em></h2></div>
-    <div class="reviews" id="reviews"></div>
-  </div>
-</section>
+<section id="avis" style="display:none"><div class="container"><div class="center reveal"><span class="eyebrow"><i></i>Avis clients</span><h2>Ils ont dit <span class="grad-text">adieu au calcaire.</span></h2></div><div class="reviews" id="reviews"></div></div></section>
+<section><div class="container"><div class="cta reveal">
+  <span class="eyebrow"><i></i>Diagnostic gratuit</span>
+  <h2>Votre eau douce,<br><span class="grad-text">en 2 minutes.</span></h2>
+  <p>Code postal, quelques questions, 2 photos. Vous recevez une offre écrite à prix fixe, avec −15 % sur votre installation.</p>
+  <button class="btn btn-glow" data-open-diag>Commencer mon diagnostic <svg><use href="#i-arrow"/></svg></button>
+</div></div></section>
 
-<!-- PROCESS -->
-<section id="etapes">
-  <div class="container">
-    <div class="reveal">
-      <span class="eyebrow">Comment ça se passe</span>
-      <h2>De votre téléphone<br><em>à l'eau douce.</em></h2>
-    </div>
-    <div class="process-grid">
-      <div class="step reveal"><h3>Diagnostic en ligne</h3><p>2 minutes : code postal, quelques questions et 2 photos de votre installation.</p></div>
-      <div class="step reveal"><h3>Offre écrite sous 24 h</h3><p>Le bon modèle, un prix fixe, vos −15 %. Vous acceptez en ligne, ou pas : aucune obligation.</p></div>
-      <div class="step reveal"><h3>Pose à la date choisie</h3><p>Grâce à vos photos, le technicien arrive avec tout le nécessaire. Environ 2 heures sur place.</p></div>
-      <div class="step reveal"><h3>On s'occupe du reste</h3><p>Sel livré au bon moment, entretien planifié, une personne joignable. Vous n'y pensez plus.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PLANS -->
-<section class="plans-sec" id="abonnements">
-  <div class="container">
-    <div class="center reveal">
-      <span class="eyebrow">Abonnements</span>
-      <h2>Plus jamais<br><em>en panne de sel.</em></h2>
-      <p class="lead">Facultatifs, sans engagement, résiliables en un clic. La fréquence de livraison s'adapte à votre eau et à votre ménage.</p>
-    </div>
-    <div class="plans">
-      <div class="plan reveal">
-        <h3>Sel Auto</h3>
-        <div class="price"><span data-price="sel"></span> <small>/ mois</small></div>
-        <p class="muted">Le sel, livré au bon moment.</p>
-        <ul><li>Sel adapté à votre appareil</li><li>Livraison automatique à domicile</li><li>Fréquence calculée pour votre eau</li><li>Avancer ou reporter en un clic</li></ul>
-        <button class="btn btn-light btn-block" data-open-diag>Choisir après le diagnostic</button>
-      </div>
-      <div class="plan featured reveal">
-        <span class="tag">Le plus choisi</span>
-        <h3>Sérénité</h3>
-        <div class="price"><span data-price="serenite"></span> <small>/ mois</small></div>
-        <p class="muted">Tout est pris en charge.</p>
-        <ul><li>Tout le contenu de Sel Auto</li><li>Entretien annuel à domicile</li><li>Analyse de votre eau</li><li>Pièces d'usure incluses</li><li>Assistance prioritaire</li></ul>
-        <button class="btn btn-primary btn-block" data-open-diag>Faire mon diagnostic</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="container">
-    <div class="center reveal">
-      <span class="eyebrow">Questions fréquentes</span>
-      <h2>Tout ce que <em>vous voulez savoir.</em></h2>
-    </div>
-    <div class="faq">
-      <details><summary>Est-ce que j'ai vraiment besoin d'un adoucisseur ?</summary><p>Si votre eau dépasse environ 25 °f, un adoucisseur protège efficacement vos installations. Entre 15 et 25 °f, c'est surtout une question de confort. Sous 15 °f, ce n'est généralement pas utile — et nous vous le dirons. Le diagnostic vous donne une estimation selon votre code postal.</p></details>
-      <details><summary>Pourquoi un appareil sans électricité ?</summary><p>Parce que c'est plus simple et plus robuste : pas de prise à prévoir, pas de carte électronique, pas d'horloge à reprogrammer après une coupure de courant. C'est la pression de l'eau qui actionne la régénération, uniquement quand le volume d'eau consommé le justifie.</p></details>
-      <details><summary>L'eau adoucie est-elle potable ?</summary><p>Oui. Nous réglons l'appareil pour garder une dureté résiduelle d'environ 8 à 15 °f, ce qui est recommandé pour le confort et pour protéger les canalisations. Si vous le souhaitez, un filtre d'eau de boisson peut être ajouté au robinet de la cuisine.</p></details>
-      <details><summary>Ai-je droit à la TVA à 6 % ?</summary><p>En général oui, si votre logement a plus de 10 ans, qu'il est utilisé à titre privé et que l'appareil et la pose sont facturés ensemble par l'installateur. Sinon, la TVA est de 21 %. Nous vérifions cela avec vous dans l'offre.</p></details>
-      <details><summary>Combien de place faut-il ?</summary><p>Le modèle compact mesure environ 48 × 54 × 24 cm, bac à sel compris. Il faut une arrivée d'eau principale (après le compteur) et une évacuation à proximité. Vos photos nous permettent de le vérifier avant de venir.</p></details>
-      <details><summary>Pourquoi des photos dans le diagnostic ?</summary><p>Pour préparer la pose sans visite technique : nous voyons votre compteur, l'arrivée d'eau et l'emplacement. Le technicien vient avec les bonnes pièces, la pose est plus rapide et vous gagnez un rendez-vous.</p></details>
-      <details><summary>Comment fonctionnent les −15 % ?</summary><p>La réduction s'applique au prix de l'installation (appareil + pose) indiqué dans votre offre personnalisée, à condition de compléter le diagnostic en ligne. Elle est valable sur l'offre envoyée suite à ce diagnostic.</p></details>
-      <details><summary>L'abonnement m'engage-t-il ?</summary><p>Non. Les abonnements sont mensuels et résiliables à tout moment. Vous pouvez aussi acheter votre appareil sans abonnement.</p></details>
-      <details><summary>Combien de sel vais-je consommer ?</summary><p>Cela dépend de la dureté de l'eau et du nombre de personnes. Pour une famille de 4 avec une eau à 30 °f, comptez de l’ordre de 60 à 80 kg par an. Le simulateur plus haut vous donne une estimation.</p></details>
-    </div>
-  </div>
-</section>
-
-<div class="container">
-  <div class="cta-band reveal">
-    <img loading="lazy" src="https://images.unsplash.com/photo-1587800387687-60c1e4d08c9d?auto=format&fit=crop&w=1800&q=80" alt="">
-    <div>
-      <h2>Prêt à dire <em style="color:#bfe9f1">adieu au calcaire ?</em></h2>
-      <p>2 minutes de diagnostic, une offre écrite à prix fixe, et −15 % sur votre installation.</p>
-      <button class="btn" data-open-diag>Commencer mon diagnostic</button>
-    </div>
-  </div>
-</div>
 </main>
-
-<footer>
-  <div class="container">
-    <div class="foot">
-      <div>
-        <a href="#" class="logo"><svg viewBox="0 0 40 40" aria-hidden="true" width="30" height="30"><path d="M20 3s12 13 12 21a12 12 0 01-24 0C8 16 20 3 20 3z" fill="#8fd3e0"/></svg>Aqualand</a>
-        <p>Fini le calcaire, sans vendeur ni contrat. Adoucisseurs sans électricité, pose rapide, sel livré chez vous.</p>
-      </div>
-      <div><h4>Navigation</h4><ul><li><a href="#pourquoi">Pourquoi nous</a></li><li><a href="#prix">Prix</a></li><li><a href="#technologie">Technologie</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-      <div><h4>Contact</h4><ul><li data-contact="email"></li><li data-contact="phone"></li><li data-contact="zone"></li></ul></div>
-    </div>
-    <div class="legal"><span data-contact="legal"></span> · Photos : Unsplash</div>
-  </div>
-</footer>
-
-<div class="sticky-cta" id="stickyCta"><button class="btn btn-primary btn-block" data-open-diag>Diagnostic gratuit · −15 %</button></div>
-
-<!-- ===== DIAGNOSTIC ===== -->
-<div class="diag" id="diag" role="dialog" aria-modal="true" aria-labelledby="diagTitle">
-  <form class="diag-box" id="diagForm" novalidate>
-    <div class="diag-head">
-      <div class="diag-top"><b id="diagTitle">Diagnostic <span class="promo">−15 %</span></b><button type="button" class="x" id="diagClose" aria-label="Fermer">×</button></div>
-      <div class="progress"><i id="prog"></i></div>
-    </div>
-    <div class="diag-body">
-
-      <div class="q-step active" data-step="1">
-        <h3>Quel est votre code postal ?</h3>
-        <p class="hint">Nous estimons la dureté de l'eau dans votre région.</p>
-        <div class="field"><input class="cp-input" id="cp" name="code_postal" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="postal-code" placeholder="1000" aria-label="Code postal"></div>
-        <div class="gauge" id="gauge">
-          <div class="gauge-bar"><span class="gauge-dot" id="gaugeDot"></span></div>
-          <div class="gauge-scale"><span>Douce</span><span>Moyenne</span><span>Dure</span><span>Très dure</span></div>
-          <div class="gauge-txt" id="gaugeTxt"></div>
-        </div>
-        <div class="err" data-err="1"></div>
-      </div>
-
-      <div class="q-step" data-step="2">
-        <h3>Votre logement</h3>
-        <p class="hint">Pour choisir le bon modèle et vérifier la TVA à 6 %.</p>
-        <div class="field"><label>Combien de personnes vivent chez vous ?</label>
-          <div class="choices" style="grid-template-columns:repeat(4,1fr)">
-            <label class="choice"><input type="radio" name="personnes" value="1-2"><span>1–2</span></label>
-            <label class="choice"><input type="radio" name="personnes" value="3-4"><span>3–4</span></label>
-            <label class="choice"><input type="radio" name="personnes" value="5-6"><span>5–6</span></label>
-            <label class="choice"><input type="radio" name="personnes" value="7+"><span>7+</span></label>
-          </div></div>
-        <div class="field"><label>Type de logement</label>
-          <div class="choices">
-            <label class="choice"><input type="radio" name="logement" value="Maison"><span><em>🏠</em>Maison</span></label>
-            <label class="choice"><input type="radio" name="logement" value="Appartement"><span><em>🏢</em>Appartement</span></label>
-          </div></div>
-        <div class="field"><label>Le logement a-t-il plus de 10 ans ?</label>
-          <div class="choices">
-            <label class="choice"><input type="radio" name="plus_10_ans" value="Oui"><span>Oui</span></label>
-            <label class="choice"><input type="radio" name="plus_10_ans" value="Non"><span>Non / je ne sais pas</span></label>
-          </div></div>
-        <div class="err" data-err="2"></div>
-      </div>
-
-      <div class="q-step" data-step="3">
-        <h3>Ce que vous constatez</h3>
-        <p class="hint">Plusieurs choix possibles.</p>
-        <div class="choices">
-          <label class="choice"><input type="checkbox" name="constats" value="Traces blanches"><span><em>💧</em>Traces blanches</span></label>
-          <label class="choice"><input type="checkbox" name="constats" value="Robinets entartrés"><span><em>🚿</em>Robinets entartrés</span></label>
-          <label class="choice"><input type="checkbox" name="constats" value="Chauffe-eau / chaudière"><span><em>🔥</em>Chauffe-eau entartré</span></label>
-          <label class="choice"><input type="checkbox" name="constats" value="Appareils en panne"><span><em>🧺</em>Appareils abîmés</span></label>
-          <label class="choice"><input type="checkbox" name="constats" value="Peau sèche"><span><em>🧴</em>Peau / cheveux secs</span></label>
-          <label class="choice"><input type="checkbox" name="constats" value="Préventif"><span><em>🛡️</em>Juste en prévention</span></label>
-        </div>
-        <div class="field" style="margin-top:16px"><label>Avez-vous déjà un traitement de l'eau ?</label>
-          <div class="choices one">
-            <label class="choice"><input type="radio" name="equipement" value="Aucun"><span>Non, rien</span></label>
-            <label class="choice"><input type="radio" name="equipement" value="Ancien adoucisseur à remplacer"><span>Un ancien adoucisseur à remplacer</span></label>
-            <label class="choice"><input type="radio" name="equipement" value="Appareil en location"><span>Un appareil en location / sous contrat</span></label>
-          </div></div>
-        <div class="err" data-err="3"></div>
-      </div>
-
-      <div class="q-step" data-step="4">
-        <h3>L'emplacement</h3>
-        <p class="hint">Où se trouve votre arrivée d'eau principale ?</p>
-        <div class="choices">
-          <label class="choice"><input type="radio" name="emplacement" value="Cave"><span>Cave</span></label>
-          <label class="choice"><input type="radio" name="emplacement" value="Garage"><span>Garage</span></label>
-          <label class="choice"><input type="radio" name="emplacement" value="Buanderie"><span>Buanderie</span></label>
-          <label class="choice"><input type="radio" name="emplacement" value="Placard / cuisine"><span>Placard / cuisine</span></label>
-        </div>
-        <div class="field" style="margin-top:16px"><label>Y a-t-il une évacuation (égout, siphon) à moins de 3 m ?</label>
-          <div class="choices" style="grid-template-columns:repeat(3,1fr)">
-            <label class="choice"><input type="radio" name="evacuation" value="Oui"><span>Oui</span></label>
-            <label class="choice"><input type="radio" name="evacuation" value="Non"><span>Non</span></label>
-            <label class="choice"><input type="radio" name="evacuation" value="Je ne sais pas"><span>?</span></label>
-          </div></div>
-        <div class="err" data-err="4"></div>
-      </div>
-
-      <div class="q-step" data-step="5">
-        <h3>2 photos, et c'est presque fini</h3>
-        <p class="hint">Elles nous évitent une visite technique. Prenez-les directement avec votre téléphone.</p>
-        <div class="photos">
-          <label class="photo-slot"><svg><use href="#i-camera"/></svg>Compteur et arrivée d'eau<input type="file" name="photo_compteur" accept="image/*" data-photo></label>
-          <label class="photo-slot"><svg><use href="#i-camera"/></svg>Emplacement prévu (vue large)<input type="file" name="photo_emplacement" accept="image/*" data-photo></label>
-        </div>
-        <p class="hint" style="margin-top:12px;font-size:13px">Pas sous la main ? Vous pouvez passer cette étape, nous vous les demanderons plus tard.</p>
-        <div class="err" data-err="5"></div>
-      </div>
-
-      <div class="q-step" data-step="6">
-        <h3>Où envoyer votre offre ?</h3>
-        <p class="hint">Vous recevez une offre personnalisée avec vos −15 %.</p>
-        <div class="field"><label for="nom">Nom et prénom</label><input id="nom" name="nom" autocomplete="name" required></div>
-        <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" inputmode="email" autocomplete="email" required></div>
-        <div class="field"><label for="tel">Téléphone</label><input id="tel" name="telephone" type="tel" inputmode="tel" autocomplete="tel" required></div>
-        <div class="field"><label for="msg">Une remarque ? (facultatif)</label><textarea id="msg" name="remarque" rows="2"></textarea></div>
-        <label class="check"><input type="checkbox" id="rgpd" name="consentement" value="Oui"><span>J'accepte qu'Aqualand utilise ces informations pour me préparer une offre et me recontacter. Elles ne sont jamais revendues.</span></label>
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-        <div class="err" data-err="6"></div>
-      </div>
-
-      <div class="q-step" data-step="7">
-        <div class="result-hero">
-          <div class="big"><svg width="40" height="40"><use href="#i-check"/></svg></div>
-          <h3>Merci, c'est envoyé !</h3>
-          <p class="hint" id="resIntro">Votre offre personnalisée arrive très bientôt.</p>
-        </div>
-        <div class="reco" id="reco"></div>
-      </div>
-    </div>
-    <div class="diag-foot">
-      <button type="button" class="btn btn-light" id="prevBtn">Retour</button>
-      <button type="button" class="btn btn-primary" id="nextBtn">Continuer</button>
-    </div>
-  </form>
-</div>
-
-
-<script src="config.js?v=3"></script>
-<script src="app.js?v=3"></script>
+<script src="config.js?v=4"></script>
+<script src="assets/layout.js?v=4"></script>
+<script src="app.js?v=4"></script>
+<script src="assets/pages.js?v=4"></script>
 </body>
 </html>
