@@ -793,3 +793,5 @@ summary::after{color:var(--brand)}
 .magnus p{color:rgba(255,255,255,.72);grid-column:1}
 .magnus .btn{grid-column:2;grid-row:2/4}
 @media(max-width:760px){.magnus{grid-template-columns:1fr}.magnus .btn{grid-column:1;grid-row:auto;justify-self:start}}
+.sys-img{aspect-ratio:auto;height:250px;padding:20px}
+.sys-img img{width:100%;height:100%;max-height:none;object-fit:contain}
