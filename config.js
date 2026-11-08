@@ -15,7 +15,7 @@ window.AQUALAND = {
   contact: {
     email: "info@aqualand.be",
     phone: "+32 ... .. .. ..",
-    zone: "Zone desservie : à compléter",
+    zone: "Partout en Belgique",
     legal: "© Aqualand — N° d'entreprise : à compléter — Mentions légales et politique de confidentialité : à compléter"
   },
 

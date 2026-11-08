@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=16">
+<link rel="stylesheet" href="assets/site.css?v=17">
 </head>
 <body data-page="" data-dark="1">
 <main>
@@ -168,13 +168,26 @@
   </div>
 </section>
 
-<section class="soft" id="qui">
-  <div class="container founder reveal">
-    <div class="founder-photo" id="founderPhoto"><span id="founderInitial"></span></div>
-    <div><span class="eyebrow"><i></i>Qui est derrière Aqualand</span><h2 id="founderTitle"></h2><blockquote id="founderText"></blockquote>
-    <div class="founder-actions"><a class="btn btn-primary" id="founderCall" href="#">Appeler</a><a class="btn btn-light" id="founderWa" href="#" target="_blank" rel="noopener">WhatsApp</a></div></div>
+<section class="dark cover" id="belgique">
+  <div class="container cover-grid">
+    <div>
+      <span class="eyebrow reveal">Partout en Belgique</span>
+      <h2 class="reveal">Un réseau d'installateurs dans tout le pays.</h2>
+      <p class="lead reveal">De la côte aux Ardennes, nos installateurs partenaires interviennent dans toutes les provinces. Vous faites votre demande en ligne, nous organisons la pose près de chez vous.</p>
+      <div class="provs reveal">
+        <span>Bruxelles-Capitale</span><span>Brabant wallon</span><span>Brabant flamand</span><span>Hainaut</span><span>Namur</span><span>Liège</span><span>Luxembourg</span><span>Anvers</span><span>Limbourg</span><span>Flandre orientale</span><span>Flandre occidentale</span>
+      </div>
+      <div class="cover-kpis reveal"><div><b>11</b><span>provinces et régions couvertes</span></div><div><b>≤ 7 j</b><span>délai de pose visé</span></div><div><b>0 €</b><span>de déplacement pour le devis</span></div></div>
+      <button class="btn btn-glow reveal" data-open-devis style="margin-top:26px">Demander un devis</button>
+    </div>
+    <div class="bemap reveal" data-bemap aria-label="Carte de la Belgique"></div>
   </div>
 </section>
+
+<section class="soft partner-band"><div class="container pb-grid reveal">
+  <div><span class="eyebrow">Professionnels de l'installation</span><h3>Plombier, chauffagiste, installateur sanitaire ?</h3><p>Rejoignez le réseau Aqualand : nous vous apportons des clients près de chez vous, vous posez des appareils simples et sans électricité.</p></div>
+  <a class="btn btn-primary" href="partenaires.html">Devenir partenaire</a>
+</div></section>
 
 <section id="avis" style="display:none"><div class="container"><div class="center reveal"><span class="eyebrow"><i></i>Avis clients</span><h2>Ils ont dit <span class="grad-text">adieu au calcaire.</span></h2></div><div class="reviews" id="reviews"></div></div></section>
 <section><div class="container"><div class="cta reveal" style="--bg:url('https://images.unsplash.com/photo-1599036629621-07f8cb665695?auto=format&fit=crop&w=1800&q=80')">
@@ -185,11 +198,11 @@
 </div></div></section>
 
 </main>
-<script src="config.js?v=16"></script>
+<script src="config.js?v=17"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
-<script src="assets/layout.js?v=16"></script>
-<script src="app.js?v=16"></script>
-<script src="assets/pages.js?v=16"></script>
-<script src="assets/portal.js?v=16"></script>
+<script src="assets/layout.js?v=17"></script>
+<script src="app.js?v=17"></script>
+<script src="assets/pages.js?v=17"></script>
+<script src="assets/portal.js?v=17"></script>
 </body>
 </html>
