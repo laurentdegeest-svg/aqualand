@@ -779,3 +779,17 @@ summary::after{color:var(--brand)}
 .pro-reco .btn-glow{background:var(--night)!important;color:#fff!important}
 @media(max-width:760px){.pro-reco{grid-template-columns:1fr}.pro-reco img{max-width:220px}}
 .dm-opt:first-child b{padding-right:64px}
+
+/* v13 — gamme complète */
+.sys-img{background:#fff;border-bottom:1px solid var(--line)}
+.sys-grid.four{grid-template-columns:repeat(4,1fr);margin-top:48px}
+@media(max-width:1100px){.sys-grid.four{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.sys-grid.four{grid-template-columns:1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chips span{font-size:12.5px;background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--ink-2)}
+.magnus{margin-top:18px;border:1px solid var(--night-line);border-radius:var(--radius);padding:30px;display:grid;grid-template-columns:1fr auto;gap:8px 30px;align-items:center}
+.magnus .eyebrow{grid-column:1/-1;margin-bottom:0}
+.magnus h3{font:300 28px 'Lato',sans-serif;grid-column:1}
+.magnus p{color:rgba(255,255,255,.72);grid-column:1}
+.magnus .btn{grid-column:2;grid-row:2/4}
+@media(max-width:760px){.magnus{grid-template-columns:1fr}.magnus .btn{grid-column:1;grid-row:auto;justify-self:start}}
