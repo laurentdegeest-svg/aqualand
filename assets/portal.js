@@ -48,35 +48,86 @@
   });
 
   /* ---------- Connexion (espace client et admin) ---------- */
-  function loginView(box, title, sub) {
-    box.innerHTML = `<div class="portal-login">
-      <h2>${title}</h2><p class="muted">${sub}</p>
-      <form id="loginForm"><div class="field"><label for="loginEmail">Votre adresse e-mail</label><input id="loginEmail" type="email" required autocomplete="email" placeholder="vous@exemple.be"></div>
-      <button class="btn btn-glow btn-block" type="submit">Recevoir mon lien de connexion</button><p class="form-msg" id="loginMsg"></p></form>
-      <p class="muted small">Pas encore de compte ? Il est créé automatiquement lors de votre premier diagnostic.</p></div>`;
-    $("#loginForm").addEventListener("submit", async e => {
+  const HERE = () => location.href.split("#")[0].split("?")[0];
+  const eye = id => `<button type="button" class="pw-eye" data-eye="${id}" aria-label="Afficher le mot de passe">Afficher</button>`;
+  function loginView(box, title, sub, mode, opts) {
+    mode = mode || "login"; opts = opts || {};
+    const off = !sb, signup = opts.signup !== false;
+    const H = {
+      login: [title, sub],
+      signup: ["Créer mon compte", "Suivez vos demandes, vos devis et votre abonnement sel au même endroit."],
+      forgot: ["Mot de passe oublié", "Indiquez votre adresse e-mail : nous vous envoyons un lien pour choisir un nouveau mot de passe."],
+      reset: ["Nouveau mot de passe", "Choisissez votre nouveau mot de passe (8 caractères minimum)."]
+    }[mode];
+    const emailF = `<div class="field"><label for="aEmail">Adresse e-mail</label><input id="aEmail" type="email" required autocomplete="email" placeholder="vous@exemple.be"></div>`;
+    const pwF = (id, lbl, ac) => `<div class="field"><div class="pw-lbl"><label for="${id}">${lbl}</label>${mode === "login" ? `<a href="#" data-mode="forgot">Mot de passe oublié ?</a>` : ""}</div><div class="pw-wrap"><input id="${id}" type="password" required minlength="${mode === "login" ? 1 : 8}" autocomplete="${ac}" placeholder="${mode === "login" ? "Votre mot de passe" : "8 caractères minimum"}">${eye(id)}</div></div>`;
+    const body = {
+      login: emailF + pwF("aPw", "Mot de passe", "current-password") + `<button class="btn btn-glow btn-block" type="submit">Se connecter</button>`,
+      signup: `<div class="field"><label for="aNom">Nom et prénom</label><input id="aNom" required autocomplete="name" placeholder="Marie Dupont"></div>` + emailF + pwF("aPw", "Mot de passe", "new-password") + `<button class="btn btn-glow btn-block" type="submit">Créer mon compte</button>`,
+      forgot: emailF + `<button class="btn btn-glow btn-block" type="submit">Envoyer le lien</button>`,
+      reset: pwF("aPw", "Nouveau mot de passe", "new-password") + pwF("aPw2", "Confirmer le mot de passe", "new-password") + `<button class="btn btn-glow btn-block" type="submit">Enregistrer le mot de passe</button>`
+    }[mode];
+    const foot = {
+      login: (signup ? `<p class="auth-alt">Pas encore de compte ? <a href="#" data-mode="signup">Créer un compte</a></p>` : "") + `<p class="auth-alt small"><a href="#" data-magic>Recevoir plutôt un lien de connexion par e-mail</a></p>`,
+      signup: `<p class="auth-alt">Déjà un compte ? <a href="#" data-mode="login">Se connecter</a></p><p class="muted small">Vous avez fait un diagnostic ? Utilisez la même adresse e-mail pour retrouver vos demandes.</p>`,
+      forgot: `<p class="auth-alt"><a href="#" data-mode="login">← Retour à la connexion</a></p>`,
+      reset: ""
+    }[mode];
+    box.innerHTML = `<div class="portal-login auth">
+      <h2>${H[0]}</h2><p class="muted">${H[1]}</p>
+      <form id="authForm" novalidate>${body}<p class="form-msg" id="authMsg" role="status"></p></form>${foot}</div>`;
+    const m = $("#authMsg"), say = (t, ok) => { m.textContent = t; m.className = "form-msg" + (ok ? " ok" : ""); };
+    box.querySelectorAll("[data-mode]").forEach(a => a.addEventListener("click", e => { e.preventDefault(); loginView(box, title, sub, a.dataset.mode, opts); }));
+    box.querySelectorAll("[data-eye]").forEach(b => b.addEventListener("click", () => { const i = $("#" + b.dataset.eye); const t = i.type === "password"; i.type = t ? "text" : "password"; b.textContent = t ? "Masquer" : "Afficher"; }));
+    const mg = box.querySelector("[data-magic]");
+    if (mg) mg.addEventListener("click", async e => {
+      e.preventDefault(); const em = $("#aEmail").value.trim();
+      if (!em || !$("#aEmail").checkValidity()) return say("Indiquez d'abord votre adresse e-mail ci-dessus.");
+      if (off) return say("L'espace client sera activé très prochainement.");
+      say("Envoi…"); const { error } = await sb.auth.signInWithOtp({ email: em, options: { emailRedirectTo: HERE(), shouldCreateUser: false } });
+      say(error ? "Aucun compte trouvé avec cette adresse." : "C'est envoyé : ouvrez l'e-mail et cliquez sur le lien.", !error);
+    });
+    $("#authForm").addEventListener("submit", async e => {
       e.preventDefault();
-      const email = $("#loginEmail").value.trim(), m = $("#loginMsg");
-      m.textContent = "Envoi…"; m.className = "form-msg";
-      const { error } = await sb.auth.signInWithOtp({ email, options: { emailRedirectTo: location.href.split("#")[0].split("?")[0] } });
-      if (error) { m.textContent = "Impossible d'envoyer le lien : " + error.message; return; }
-      m.className = "form-msg ok"; m.textContent = "C'est envoyé. Ouvrez l'e-mail et cliquez sur le lien pour accéder à votre espace.";
+      const f = e.target; if (!f.checkValidity()) { const bad = f.querySelector(":invalid"); bad.focus(); return say(bad.type === "email" ? "Adresse e-mail invalide." : bad.type === "password" ? (mode === "login" ? "Indiquez votre mot de passe." : "Le mot de passe doit faire au moins 8 caractères.") : "Complétez tous les champs."); }
+      if (off) return say("L'espace client sera activé très prochainement. En attendant, faites votre diagnostic : nous vous répondons par e-mail.");
+      const em = $("#aEmail") && $("#aEmail").value.trim().toLowerCase(), pw = $("#aPw") && $("#aPw").value;
+      const btn = f.querySelector("button[type=submit]"); btn.disabled = true; say("Un instant…");
+      try {
+        if (mode === "login") {
+          const { error } = await sb.auth.signInWithPassword({ email: em, password: pw });
+          if (error) say(/confirm/i.test(error.message) ? "Confirmez d'abord votre adresse via l'e-mail reçu." : "E-mail ou mot de passe incorrect.");
+        } else if (mode === "signup") {
+          const { data, error } = await sb.auth.signUp({ email: em, password: pw, options: { emailRedirectTo: HERE(), data: { nom: $("#aNom").value.trim() } } });
+          if (error) say(/registered|exists/i.test(error.message) ? "Un compte existe déjà avec cette adresse. Connectez-vous ou utilisez « Mot de passe oublié »." : error.message);
+          else if (!data.session) say("Compte créé ! Confirmez votre adresse en cliquant sur le lien reçu par e-mail.", true);
+        } else if (mode === "forgot") {
+          const { error } = await sb.auth.resetPasswordForEmail(em, { redirectTo: HERE() });
+          say(error ? error.message : "Si un compte existe pour cette adresse, vous allez recevoir un e-mail avec un lien pour choisir un nouveau mot de passe.", !error);
+        } else if (mode === "reset") {
+          if (pw !== $("#aPw2").value) say("Les deux mots de passe ne correspondent pas.");
+          else { const { error } = await sb.auth.updateUser({ password: pw }); if (error) say(error.message); else { say("Mot de passe enregistré.", true); setTimeout(() => location.replace(HERE()), 900); } }
+        }
+      } catch (err) { say("Une erreur est survenue. Réessayez dans un instant."); }
+      btn.disabled = false;
     });
   }
-  const notReady = box => box.innerHTML = `<div class="portal-login"><h2>Espace client</h2><p class="muted">L'espace client sera activé très prochainement. En attendant, faites votre diagnostic : nous vous répondons par e-mail.</p><button class="btn btn-glow" data-open-diag>Faire mon diagnostic</button></div>`;
+  window.AQUA_LOGIN = loginView;
+  const notReady = box => loginView(box, "Espace client", "Connectez-vous pour suivre votre diagnostic, consulter votre devis et gérer votre abonnement sel.");
 
   /* ---------- Espace client ---------- */
   const portal = $("#portal");
   if (portal) {
     if (!sb) { notReady(portal); return; }
     const render = async session => {
-      if (!session) return loginView(portal, "Accédez à votre espace", "Suivez votre diagnostic, consultez votre devis et nos fiches. Nous vous envoyons un lien de connexion par e-mail, sans mot de passe.");
+      if (recovering) return loginView(portal, "", "", "reset");
+      if (!session) return loginView(portal, "Espace client", "Connectez-vous pour suivre votre diagnostic, consulter votre devis et gérer votre abonnement sel.");
       const user = session.user;
       const { data: rows, error } = await sb.from("diagnostics").select("*").order("created_at", { ascending: false });
       const nom = (rows && rows[0] && rows[0].nom) || (user.user_metadata && user.user_metadata.nom) || "";
       portal.innerHTML = `
         <div class="portal-head"><div><span class="eyebrow">Espace client</span><h2>Bonjour${nom ? " " + esc(nom.split(" ")[0]) : ""}.</h2><p class="muted">${esc(user.email)}</p></div>
-          <div class="portal-actions"><button class="btn btn-glow" data-open-diag>Demander un nouveau diagnostic</button><button class="btn btn-light" id="logout">Se déconnecter</button></div></div>
+          <div class="portal-actions"><button class="btn btn-glow" data-open-diag>Demander un nouveau diagnostic</button><button class="btn btn-light" id="chpw">Mot de passe</button><button class="btn btn-light" id="logout">Se déconnecter</button></div></div>
         <h3 class="portal-h">Vos demandes</h3>
         <div id="reqs">${error ? `<p class="form-msg">${esc(error.message)}</p>` : (rows.length ? rows.map(card).join("") : `<div class="empty">Aucune demande pour l'instant. <button class="btn btn-light" data-open-diag>Faire mon diagnostic</button></div>`)}</div>
         <h3 class="portal-h">Vos fiches et explications</h3>
@@ -89,6 +140,7 @@
           <a class="fiche" href="tarifs.html"><b>Abonnement sel</b><span>Livraison automatique, sans engagement</span></a>
         </div>`;
       $("#logout").addEventListener("click", async () => { await sb.auth.signOut(); location.reload(); });
+      $("#chpw").addEventListener("click", () => { recovering = true; loginView(portal, "", "", "reset"); });
       portal.querySelectorAll("[data-pdf]").forEach(b => b.addEventListener("click", async () => {
         const { data, error } = await sb.storage.from("devis").createSignedUrl(b.dataset.pdf, 3600);
         if (error) return alert("Le devis n'est pas accessible pour le moment.");
@@ -119,8 +171,12 @@
           <dt>Emplacement</dt><dd>${esc(r.emplacement)} · évacuation : ${esc(r.evacuation)}</dd><dt>Photos</dt><dd>${(r.photos || []).length} envoyée(s)</dd></dl></details>
         ${devis}</article>`;
     }
+    let recovering = /type=recovery/.test(location.hash);
     sb.auth.getSession().then(({ data }) => render(data.session));
-    sb.auth.onAuthStateChange((ev, session) => { if (ev === "SIGNED_IN" || ev === "SIGNED_OUT") render(session); });
+    sb.auth.onAuthStateChange((ev, session) => {
+      if (ev === "PASSWORD_RECOVERY") { recovering = true; return render(session); }
+      if (ev === "SIGNED_IN" || ev === "SIGNED_OUT") render(session);
+    });
   }
 
   /* ---------- Administration ---------- */
@@ -128,7 +184,7 @@
   if (admin) {
     if (!sb) { admin.innerHTML = `<div class="portal-login"><h2>Administration</h2><p class="muted">Renseignez l'URL et la clé Supabase dans config.js pour activer l'administration.</p></div>`; return; }
     const render = async session => {
-      if (!session) return loginView(admin, "Administration Aqualand", "Connexion réservée à l'équipe Aqualand.");
+      if (!session) return loginView(admin, "Administration Aqualand", "Connexion réservée à l'équipe Aqualand.", "login", { signup: false });
       const { data: isAdm } = await sb.rpc("is_admin");
       if (!isAdm) { admin.innerHTML = `<div class="portal-login"><h2>Accès refusé</h2><p class="muted">${esc(session.user.email)} n'est pas administrateur.</p><button class="btn btn-light" id="lo">Se déconnecter</button></div>`; $("#lo").onclick = async () => { await sb.auth.signOut(); location.reload(); }; return; }
       const { data: rows, error } = await sb.from("diagnostics").select("*").order("created_at", { ascending: false });
@@ -173,7 +229,11 @@
         f.statut.value = upd.statut;
       }));
     };
+    let recovering = /type=recovery/.test(location.hash);
     sb.auth.getSession().then(({ data }) => render(data.session));
-    sb.auth.onAuthStateChange((ev, session) => { if (ev === "SIGNED_IN" || ev === "SIGNED_OUT") render(session); });
+    sb.auth.onAuthStateChange((ev, session) => {
+      if (ev === "PASSWORD_RECOVERY") { recovering = true; return render(session); }
+      if (ev === "SIGNED_IN" || ev === "SIGNED_OUT") render(session);
+    });
   }
 })();

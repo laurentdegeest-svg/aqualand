@@ -864,3 +864,18 @@ a.link{color:var(--blue,#1d6fe0);font-weight:700;text-decoration:none;border-bot
 .pcol li a:hover{color:#0b1b33;text-decoration:underline}
 @media(max-width:560px){.pcol ul{columns:1}.clist{grid-template-columns:1fr 1fr}.clist a{flex-direction:column;gap:2px}}
 .foot{grid-template-columns:2fr 1fr 1fr 1fr 1fr}@media(max-width:1000px){.foot{grid-template-columns:1fr 1fr 1fr}}@media(max-width:560px){.foot{grid-template-columns:1fr 1fr}}
+/* v19 — connexion par mot de passe */
+.auth .field{margin-bottom:16px}
+.pw-lbl{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.pw-lbl a,.auth-alt a{color:var(--blue,#1d6fe0);font-weight:700;text-decoration:none}
+.pw-lbl a{font-size:13.5px}
+.pw-lbl a:hover,.auth-alt a:hover{text-decoration:underline}
+.pw-wrap{position:relative}
+.pw-wrap input{padding-right:92px}
+.pw-eye{position:absolute;right:8px;top:50%;transform:translateY(-50%);border:0;background:transparent;font:600 13px 'Lato',sans-serif;color:var(--ink-2);padding:8px 10px;border-radius:999px;cursor:pointer}
+.pw-eye:hover{background:var(--soft,#f3f5f9);color:var(--ink)}
+.auth .btn-block{margin-top:6px}
+.auth-alt{text-align:center;margin-top:18px;color:var(--ink-2)}
+.auth-alt.small{font-size:13.5px;margin-top:8px}
+.portal-login.auth .muted.small{text-align:center;margin:14px 0 0}
+@media(max-width:560px){.portal-login{padding:28px 22px;margin:20px auto}}
