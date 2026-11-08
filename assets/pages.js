@@ -169,6 +169,9 @@
     io2.observe(cc);
   }
 
+  /* Diagnostic direct depuis la page contact */
+  document.querySelectorAll("[data-open-diag-direct]").forEach(b => b.addEventListener("click", () => { const d = document.getElementById("dmDiag"); if (d) d.click(); }));
+
   /* Formulaires devis / rendez-vous */
   document.querySelectorAll("form[data-lead]").forEach(f => f.addEventListener("submit", async e => {
     e.preventDefault();
@@ -185,5 +188,5 @@
   }));
   const tabs = document.querySelectorAll(".tabs button");
   function tab(k) { tabs.forEach(b => b.classList.toggle("active", b.dataset.tab === k)); document.querySelectorAll("[data-pane]").forEach(p => p.hidden = p.dataset.pane !== k); }
-  if (tabs.length) { tabs.forEach(b => b.addEventListener("click", () => { tab(b.dataset.tab); history.replaceState(null, "", "#" + b.dataset.tab); })); tab(location.hash === "#rdv" ? "rdv" : "devis"); addEventListener("hashchange", () => tab(location.hash === "#rdv" ? "rdv" : "devis")); }
+  if (tabs.length) { tabs.forEach(b => b.addEventListener("click", () => { tab(b.dataset.tab); history.replaceState(null, "", "#" + b.dataset.tab); })); tab(location.hash === "#devis" ? "devis" : "rdv"); addEventListener("hashchange", () => tab(location.hash === "#devis" ? "devis" : "rdv")); }
 })();

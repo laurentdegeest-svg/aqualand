@@ -802,3 +802,11 @@ summary::after{color:var(--brand)}
 @media(max-width:1180px){.sys-grid.five{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:760px){.sys-grid.five{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.sys-grid.five{grid-template-columns:1fr}}
+
+/* v16 — page rendez-vous simplifiée */
+.contact-h{font-size:clamp(34px,4.6vw,54px);margin-bottom:12px}
+.lead-form.simple{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+.choices.one-row{grid-template-columns:repeat(3,1fr)}
+@media(max-width:520px){.choices.one-row{grid-template-columns:1fr}}
+.center.small{text-align:center;margin-top:12px}
+.contact-alt{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:28px;color:var(--ink-2)}
