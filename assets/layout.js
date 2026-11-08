@@ -49,7 +49,7 @@
   <g>${tabs}</g>
   <rect x="0" y="78" width="170" height="6" fill="url(#${id}l)" class="led"/>
   <rect x="0" y="84" width="170" height="40" fill="url(#${id}h)" opacity=".5"/>
-  <text x="18" y="130" fill="#fff" font-family="Space Grotesk,Inter,sans-serif" font-weight="700" font-size="17" letter-spacing="-.5">aqualand</text>
+  <text x="18" y="130" fill="#fff" font-family="Geist,Inter,sans-serif" font-weight="700" font-size="17" letter-spacing="-.5">aqualand</text>
   <text x="18" y="146" fill="rgba(255,255,255,.5)" font-family="Inter,sans-serif" font-size="9" letter-spacing="2">COMPACT · 0 kWh</text>
   <circle cx="148" cy="226" r="6" fill="#22d3ee" class="led"/>
 </g>
