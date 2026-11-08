@@ -13,48 +13,40 @@
 <link rel="apple-touch-icon" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=5">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css?v=6">
 </head>
 <body data-page="" data-dark="1">
 <main>
 
-<section class="hero">
-  <canvas id="flow" aria-hidden="true"></canvas>
-  <div class="container hero-grid">
-    <div>
-      <div class="promo-pill reveal"><b>−15 %</b> avec le diagnostic en ligne</div>
-      <h1 class="reveal d1">L'eau douce,<br><span class="grad-text">en abonnement.</span></h1>
-      <p class="lead reveal d2">Un adoucisseur belge qui fonctionne sans électricité, installé chez vous à prix fixe. Ensuite, le sel arrive tout seul et l'entretien est planifié. Vous n'avez plus jamais à y penser.</p>
-      <div class="hero-ctas reveal d3">
-        <button class="btn btn-glow" data-open-diag>Faire mon diagnostic <svg><use href="#i-arrow"/></svg></button>
-        <a class="btn btn-outline" href="solution.html">Découvrir la solution</a>
-      </div>
-      <div class="chip-row reveal d3">
-        <span class="chip"><svg><use href="#i-bolt-off"/></svg><b>0 kWh</b></span>
-        <span class="chip"><svg><use href="#i-flag"/></svg>Made in Belgium</span>
-        <span class="chip"><svg><use href="#i-clock"/></svg>Pose ± 2 h</span>
-        <span class="chip"><svg><use href="#i-repeat"/></svg>Sans engagement</span>
-      </div>
+<section class="hero hero-photo" style="--bg:url('https://images.unsplash.com/photo-1598469598566-f55fbc9ded59?auto=format&fit=crop&w=2000&q=80')">
+  <div class="container hero-center">
+    <div class="promo-pill reveal"><b>−15 %</b> avec le diagnostic en ligne</div>
+    <h1 class="reveal d1">L'eau douce, en abonnement.</h1>
+    <p class="lead reveal d2">Un adoucisseur belge qui fonctionne sans électricité, installé chez vous à prix fixe. Le sel arrive tout seul, l'entretien est planifié : vous n'y pensez plus.</p>
+    <div class="hero-ctas reveal d3">
+      <button class="btn btn-glow" data-open-diag>Faire mon diagnostic</button>
+      <a class="btn btn-outline" href="solution.html">Découvrir la solution</a>
     </div>
-    <div class="product-stage reveal">
+    <div class="hero-product"><div class="product-stage reveal">
   <div class="halo"></div><div class="floor"></div>
   <div class="product-3d" data-product></div>
   <div class="tag3d t1"><b>0 kWh</b>Aucune électricité</div>
   <div class="tag3d t2"><b>48 × 54 × 24 cm</b>Ultra compact</div>
   <div class="tag3d t3"><b>Made in Belgium</b>Pièces &amp; SAV locaux</div>
-</div>
+</div></div>
   </div>
+  <a class="chevron" href="#modele" aria-label="Défiler"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M5 9l7 7 7-7"/></svg></a>
 </section>
 
 <div class="marquee" aria-hidden="true"><div class="track">
   <span>Zéro électricité</span><span>Fabriqué en Belgique</span><span>Prix fixe affiché</span><span>Sel livré automatiquement</span><span>Pose en ± 2 heures</span><span>Résiliable en un clic</span><span>Régénération à la demande</span><span>Diagnostic en 2 minutes</span><span>Zéro électricité</span><span>Fabriqué en Belgique</span><span>Prix fixe affiché</span><span>Sel livré automatiquement</span><span>Pose en ± 2 heures</span><span>Résiliable en un clic</span><span>Régénération à la demande</span><span>Diagnostic en 2 minutes</span>
 </div></div>
 
-<section>
-  <div class="container">
+<section id="modele">
+  <div class="container center">
     <span class="eyebrow reveal"><i></i>Le nouveau modèle</span>
-    <h2 class="reveal" style="max-width:860px">Avoir un adoucisseur, c'était compliqué. <span class="grad-text">On l'a rendu simple.</span></h2>
+    <h2 class="reveal" style="max-width:860px;margin-inline:auto">Avoir un adoucisseur, c'était compliqué. <span class="grad-text">On l'a rendu simple.</span></h2>
     <p class="lead reveal">Pas de commercial chez vous, pas de devis flou, pas de contrat de 10 ans. Un produit robuste, un prix clair, et un service qui tourne tout seul.</p>
     <div class="stats">
       <div class="stat reveal"><b><span data-count="0">0</span><small>kWh</small></b><span>d'électricité consommée</span></div>
@@ -155,17 +147,17 @@
 </section>
 
 <section id="avis" style="display:none"><div class="container"><div class="center reveal"><span class="eyebrow"><i></i>Avis clients</span><h2>Ils ont dit <span class="grad-text">adieu au calcaire.</span></h2></div><div class="reviews" id="reviews"></div></div></section>
-<section><div class="container"><div class="cta reveal">
+<section><div class="container"><div class="cta reveal" style="--bg:url('https://images.unsplash.com/photo-1599036629621-07f8cb665695?auto=format&fit=crop&w=1800&q=80')">
   <span class="eyebrow"><i></i>Diagnostic gratuit</span>
   <h2>Votre eau douce,<br><span class="grad-text">en 2 minutes.</span></h2>
   <p>Code postal, quelques questions, 2 photos. Vous recevez une offre écrite à prix fixe, avec −15 % sur votre installation.</p>
-  <button class="btn btn-glow" data-open-diag>Commencer mon diagnostic <svg><use href="#i-arrow"/></svg></button>
+  <button class="btn btn-glow" data-open-diag>Commencer mon diagnostic</button>
 </div></div></section>
 
 </main>
-<script src="config.js?v=5"></script>
-<script src="assets/layout.js?v=5"></script>
-<script src="app.js?v=5"></script>
-<script src="assets/pages.js?v=5"></script>
+<script src="config.js?v=6"></script>
+<script src="assets/layout.js?v=6"></script>
+<script src="app.js?v=6"></script>
+<script src="assets/pages.js?v=6"></script>
 </body>
 </html>
