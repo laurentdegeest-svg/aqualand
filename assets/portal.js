@@ -100,7 +100,7 @@
         if (error) return alert(error.message);
         render((await sb.auth.getSession()).data.session);
       }));
-      document.querySelectorAll("[data-open-diag]").forEach(b => { if (!b._bound) { b._bound = 1; b.addEventListener("click", () => document.querySelector(".header [data-open-diag]").click()); } });
+      document.querySelectorAll("[data-open-diag]").forEach(b => { if (!b._bound) { b._bound = 1; b.addEventListener("click", () => document.getElementById("dmDiag").click()); } });
     };
     function card(r) {
       const idx = Math.max(0, STEPS.findIndex(s => s[0] === r.statut));
